@@ -569,18 +569,67 @@ dialog.contract::backdrop{background:rgba(6,17,31,.82)}
 .cinfo ul{margin:0;padding-inline-start:18px;display:grid;gap:3px;border:0}
 .cinfo li{display:list-item;font-size:.84rem;color:#2B3D52}
 .cinfo li b{color:var(--azure);font-family:var(--lat)}
+
+/* ===== الترويسة (إعادة ترتيب) ===== */
+.ticker,.topbar{display:none}
+.ubar{background:#06111F;color:#A9BCCE;font-size:.78rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.ubar .wrap{display:flex;align-items:center;gap:16px;height:38px}
+.ubar .lab{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;background:rgba(23,153,227,.14);color:#5BB8F0;font-family:var(--lat);font-weight:700;font-size:.66rem;letter-spacing:.12em;padding:3px 9px;border:1px solid rgba(23,153,227,.35)}
+.ubar .lab i{width:6px;height:6px;border-radius:50%;background:#2FD07A;animation:blink 1.4s infinite}
+.ubar .tk-view{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.ubar .tk-run span.it{padding:0 22px 0 0;font-size:.78rem;color:#B9C8D8}
+.ubar .tk-run span.it b{font-size:.72rem}
+.uinfo{flex:0 0 auto;display:flex;align-items:center;gap:0;white-space:nowrap}
+.uinfo>*{padding-inline:12px;border-inline-start:1px solid rgba(255,255,255,.12)}
+.uinfo>*:first-child{border-inline-start:0}
+.uinfo b{color:#fff;font-family:var(--lat);font-weight:600}
+.uinfo a{color:#A9BCCE;text-decoration:none;font-family:var(--lat)}
+.uinfo a:hover{color:#fff}
+.nav{background:rgba(10,28,48,.94);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 10px 30px -20px rgba(0,0,0,.8)}
+.nav .wrap{height:74px;padding-block:0;gap:28px}
+.brand{flex:0 0 auto;gap:12px}
+.brand .lgm{font-size:1.9rem}
+.brand .tg{padding-inline-start:12px;border-inline-start:1px solid rgba(255,255,255,.15);font-size:.7rem;line-height:1.35}
+.brand .tg b{font-size:.86rem;margin-bottom:1px}
+.links{flex:1;justify-content:center;gap:4px}
+.links a{padding:8px 11px;font-size:.88rem;color:#C2D2E2;white-space:nowrap}
+.links a::after{inset-inline:11px;bottom:2px}
+.links a.on{color:#fff}.links a.on::after{transform:scaleX(1)}
+.links .m-only{display:none}
+.navr{flex:0 0 auto;gap:12px}
+.plink{color:#C2D2E2;text-decoration:none;font-size:.86rem;font-weight:600;padding:8px 4px}
+.plink:hover{color:#fff}
+.navr .lang button{padding:6px 10px;font-size:.74rem;height:34px}
+.navr .btn{padding:0 18px;height:40px;line-height:37px;font-size:.88rem}
+.burger{display:none;width:42px;height:40px;border:1.5px solid rgba(255,255,255,.25);background:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:#fff;transition:transform .2s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:1180px){.uinfo a[href^=mailto]{display:none}}
+@media (max-width:1100px){
+  .links{display:none;position:absolute;top:100%;inset-inline:0;flex-direction:column;align-items:stretch;gap:0;background:#0A1C30;border-bottom:1px solid rgba(255,255,255,.1);padding:8px 16px 16px;box-shadow:0 20px 40px -20px rgba(0,0,0,.8)}
+  .links.open{display:flex}
+  .links a{padding:13px 4px;border-bottom:1px solid rgba(255,255,255,.07);font-size:.95rem}
+  .links a::after{display:none}
+  .links .m-only{display:block;color:#5BB8F0}
+  .burger{display:inline-flex}.plink{display:none}
+  .nav .wrap{position:relative}
+}
+@media (max-width:760px){.uinfo{display:none}.ubar .wrap{height:34px}.nav .wrap{height:64px;gap:12px}.brand .lgm{font-size:1.6rem}}
+@media (max-width:560px){.brand .tg{display:none}.navr{gap:8px}}
 </style>
 
 <div dir="rtl" id="root">
-  <div class="topbar"><div class="wrap"><span id="reg">وكالة ضريبية مسجّلة لدى الهيئة — رقم التسجيل <b>30006456</b></span><span class="num" dir="ltr">+971 4 555 4777 · uae@attconsultancy.com</span></div></div>
-  <div class="ticker" aria-label="Updates"><div class="wrap">
+  <div class="ubar"><div class="wrap">
     <span class="lab"><i></i>LIVE</span>
     <div class="tk-view"><div class="tk-run" id="tkRun"></div></div>
+    <div class="uinfo"><span id="reg">وكالة ضريبية مسجّلة لدى الهيئة · <b>30006456</b></span><a href="tel:+97145554777" dir="ltr">+971 4 555 4777</a><a href="mailto:uae@attconsultancy.com" dir="ltr">uae@attconsultancy.com</a></div>
   </div></div>
 
   <header class="nav"><div class="wrap">
     <a class="brand" href="#top" style="text-decoration:none"><span class="lgm">a<i>tt</i></span><span class="tg"><b><span class="ar">إيه تي تي للاستشارات ذ.م.م</span><span class="en">ATT CONSULTANCY LLC</span></b><span class="ar">وكيل ضريبي مسجّل · الفوترة الإلكترونية</span><span class="en">Registered tax agent · E-invoicing</span></span></a>
-    <nav class="links" aria-label="Sections">
+    <nav class="links" id="navLinks" aria-label="Sections">
       <a href="#why"><span class="ar">لماذا الآن</span><span class="en">Why now</span></a>
       <a href="#timeline"><span class="ar">المواعيد</span><span class="en">Deadlines</span></a>
       <a href="#how"><span class="ar">كيف تعمل</span><span class="en">How it works</span></a>
@@ -588,10 +637,13 @@ dialog.contract::backdrop{background:rgba(6,17,31,.82)}
       <a href="#calc"><span class="ar">ابنِ عرضك</span><span class="en">Build your quote</span></a>
       <a href="#faq"><span class="ar">الأسئلة</span><span class="en">FAQ</span></a>
       <a href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+      <a class="m-only" href="partner.html"><span class="ar">بوابة الشركاء</span><span class="en">Partner portal</span></a>
     </nav>
     <div class="navr">
+      <a class="plink" href="partner.html"><span class="ar">الشركاء</span><span class="en">Partners</span></a>
       <div class="lang"><button type="button" id="bEn" aria-pressed="false">EN</button><button type="button" id="bAr" aria-pressed="true">AR</button></div>
       <a class="btn solid" id="book" href="#contact">احجز استشارة</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     </div>
   </div></header>
 
@@ -988,7 +1040,7 @@ const AR={
   '<b>تسليم المستندات:</b> نستلم مستندات كل شهر حتى اليوم السابع من الشهر التالي، حتى نقدّم الإقرار قبل موعده النظامي بوقت كافٍ.',
   '<b>مراجعة الشريحة:</b> نراجع حجمك كل ربع، وإذا تجاوزت شريحتك يُعدَّل السعر من الربع التالي فقط وليس بأثر رجعي.',
   '<b>غير مشمول:</b> الغرامات الإدارية ورسوم الهيئة. والأسعار بدون ضريبة القيمة المضافة 5%.'],
- kick:'الفوترة الإلكترونية',addK:'إضافات',tg:'تقنيات المحاسبة والضرائب',reg:'وكالة ضريبية مسجّلة لدى الهيئة — رقم التسجيل <b>30006456</b>',book:'احجز استشارة',cur:'درهم',
+ kick:'الفوترة الإلكترونية',addK:'إضافات',tg:'تقنيات المحاسبة والضرائب',reg:'وكالة ضريبية مسجّلة لدى الهيئة · <b>30006456</b>',book:'احجز استشارة',cur:'درهم',
  yr:'/ سنوياً',
  addH:'إضافات اختيارية',
  addN:'تُضاف على أي باقة حسب حاجة الشركة. الباقة وحدها لا تشمل وقت استجابة مضموناً ولا مراجعة ضريبية.',
@@ -1060,7 +1112,7 @@ const EN={
   '<b>Document hand-over:</b> each month’s documents reach us by the 7th of the following month, so we file well before the statutory deadline.',
   '<b>Band review:</b> we review your volume every quarter; if you outgrow your band, the price changes from the next quarter only, never retroactively.',
   '<b>Not included:</b> administrative penalties and FTA fees. Prices exclude 5% VAT.'],
- kick:'E-invoicing',addK:'Add-ons',tg:'Accounting & Taxation Technology',reg:'FTA Registered Tax Agency — Reg. No. <b>30006456</b>',book:'Book a consultation',cur:'AED',
+ kick:'E-invoicing',addK:'Add-ons',tg:'Accounting & Taxation Technology',reg:'FTA registered tax agency · <b>30006456</b>',book:'Book a consultation',cur:'AED',
  yr:'/ year',
  addH:'Optional add-ons',
  addN:'Added to any plan as the business needs them. A plan on its own carries no guaranteed response time and no tax review.',
@@ -1745,6 +1797,13 @@ $('qAgain').addEventListener('click',function(){if(last&&lastC&&!last.custom)sho
 })();
 
 window.afterPaint();
+
+(function(){var b=document.getElementById('burger'),n=document.getElementById('navLinks');if(!b||!n)return;
+b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false');}});
+var ls=[].slice.call(n.querySelectorAll('a[href^="#"]'));if(!('IntersectionObserver' in window))return;
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){ls.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id);});}});},{rootMargin:'-45% 0px -50% 0px'});
+ls.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)io.observe(t);});})();
 </script>
 
 </body></html>
