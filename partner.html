@@ -519,8 +519,7 @@ async function share(){
 function download(){var u=URL.createObjectURL(lastPdf),a=document.createElement('a');a.href=u;a.download=safeName();document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u);},4000);done('نُزّل الملف في التنزيلات.');}
 function printIt(){
   var fr=document.createElement('iframe');fr.style.cssText='position:fixed;width:0;height:0;border:0;right:0;bottom:0';document.body.appendChild(fr);
-  var d=fr.contentWindow.document;d.open();d.write('<!doctype html><html><head><meta charset="utf-8"><title>'+lastNo+'</title><style>@page{size:A4;margin:0}html,body{margin:0}img{display:block;width:210mm;height:297mm;page-break-after:always}</style></head><body>'+pages.map(function(cv){return '<img src="'+cv.toDataURL('image/jpeg',0.93)+'">';}).join('')+'<script>try{var q=new URLSearchParams(location.search).get("agent");var e=document.getElementById("aCode");if(e){if(q){e.value=q.toUpperCase();}else{try{var s=localStorage.getItem("attAgent");if(s&&!e.value)e.value=s;}catch(x){}}e.dispatchEvent(new Event("input",{bubbles:true}));e.addEventListener("input",function(){try{localStorage.setItem("attAgent",e.value)}catch(x){}});}}catch(x){}</script>
-</body></html>');d.close();
+  var d=fr.contentWindow.document;d.open();d.write('<!doctype html><html><head><meta charset="utf-8"><title>'+lastNo+'</title><style>@page{size:A4;margin:0}html,body{margin:0}img{display:block;width:210mm;height:297mm;page-break-after:always}</style></head><body>'+pages.map(function(cv){return '<img src="'+cv.toDataURL('image/jpeg',0.93)+'">';}).join('')+'</body></html>');d.close();
   setTimeout(function(){try{fr.contentWindow.focus();fr.contentWindow.print();}catch(e){download();}setTimeout(function(){fr.remove();},60000);},500);
 }
 $('mkPdf').addEventListener('click',async function(){
@@ -540,4 +539,5 @@ document.getElementById('adds').addEventListener('change',refresh);document.getE
 })();
 </script>
 
+<script>try{var q=new URLSearchParams(location.search).get("agent");var e=document.getElementById("aCode");if(e){if(q){e.value=q.toUpperCase();}else{try{var s=localStorage.getItem("attAgent");if(s&&!e.value)e.value=s;}catch(x){}}e.dispatchEvent(new Event("input",{bubbles:true}));e.addEventListener("input",function(){try{localStorage.setItem("attAgent",e.value)}catch(x){}});}}catch(x){}</script>
 </body></html>
