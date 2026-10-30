@@ -624,6 +624,185 @@ dialog.contract::backdrop{background:rgba(6,17,31,.82)}
 .ubar{border-bottom:1px solid rgba(255,255,255,.07);border-top:0}
 
 .stat .nt{font-size:1.45rem;font-weight:700;color:var(--cyan);line-height:1.25;min-height:2.75rem;display:flex;align-items:center}
+
+/* ===== أقسام جديدة: الثقة، المنظومة، الجاهزية، الربط، المقارنة، المصطلحات ===== */
+.trust{background:#08182B;border-block:1px solid rgba(255,255,255,.07)}
+.trust-row{display:grid;grid-template-columns:repeat(5,1fr)}
+.tr-i{padding:22px 18px;border-inline-start:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:4px}
+.tr-i:first-child{border-inline-start:0;padding-inline-start:0}
+.tr-i b{font-family:var(--lat);font-size:1.05rem;color:#fff;letter-spacing:.01em}
+.tr-i>span{font-size:.78rem;color:var(--mut);line-height:1.5}
+.tr-i a{color:#5BB8F0;text-decoration:none}
+.tr-i a:hover{text-decoration:underline}
+@media (max-width:900px){.trust-row{grid-template-columns:1fr 1fr}.tr-i{border-inline-start:0;padding-inline:0;border-top:1px solid rgba(255,255,255,.08)}.tr-i:nth-child(-n+2){border-top:0}}
+
+.facts{padding-block:96px;background:var(--ink)}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln);margin-top:40px}
+.fc{background:var(--ink);padding:28px 26px}
+.fc small{display:block;color:var(--cyan);font-size:.76rem;font-weight:600;letter-spacing:.04em;margin-bottom:8px}
+.fc b{display:block;font-size:1.15rem;margin-bottom:10px;color:#fff}
+.fc p{margin:0;color:var(--b2);font-size:.88rem;line-height:1.75}
+@media (max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
+
+.ready{padding-block:96px;background:linear-gradient(180deg,var(--night),#0B2442)}
+.ready-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.rd-pts{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
+.rd-pts li{display:flex;gap:10px;align-items:center;color:var(--b2);font-size:.9rem}
+.rd-pts li::before{content:"";width:8px;height:8px;background:var(--cyan);flex:0 0 8px}
+.rd{background:#fff;color:var(--ink);padding:28px;border-top:4px solid var(--cyan);box-shadow:0 30px 60px -30px rgba(0,0,0,.7);min-height:430px;display:flex;flex-direction:column}
+.rd-top{display:flex;align-items:center;gap:14px;font-size:.8rem;color:var(--slate);font-weight:600;margin-bottom:20px}
+.rd-bar{flex:1;height:4px;background:#E3EAF1}
+.rd-bar i{display:block;height:100%;background:var(--cyan);width:0;transition:width .35s}
+.rd-q h3{font-size:1.25rem;margin:0 0 6px;line-height:1.45}
+.rd-q .sub{color:#51637A;font-size:.86rem;margin:0 0 18px}
+.rd-opts{display:grid;gap:10px}
+.rd-opts button{font:inherit;text-align:start;background:#fff;border:1.5px solid var(--line);padding:14px 16px;cursor:pointer;color:var(--ink);font-weight:600;font-size:.95rem;display:flex;justify-content:space-between;gap:12px;align-items:center;transition:border-color .15s,background .15s}
+.rd-opts button small{font-weight:400;color:#51637A;font-size:.8rem}
+.rd-opts button:hover{border-color:var(--cyan);background:#F3F9FE}
+.rd-opts button[aria-pressed="true"]{border-color:var(--cyan);background:#E8F4FC}
+.rd-opts button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.rd-num{display:flex;gap:10px}
+.rd-num input{flex:1;font:inherit;font-size:1.2rem;font-family:var(--lat);font-weight:700;padding:12px 14px;border:1.5px solid var(--line);color:var(--ink)}
+.rd-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.rd-chips button{font:inherit;font-family:var(--lat);font-size:.85rem;padding:7px 12px;border:1.5px solid var(--line);background:#fff;cursor:pointer;color:var(--ink)}
+.rd-chips button:hover{border-color:var(--cyan)}
+.rd-nav{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.rd-nav .btn.ghost{border-color:var(--line);color:var(--ink);padding:8px 16px}
+.rd-hint{font-size:.78rem;color:#51637A}
+.rr-phase{background:var(--ink);color:#fff;padding:20px 22px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+.rr-phase small{color:#8FA3B6;display:block;font-size:.76rem}
+.rr-phase b{font-size:1.15rem;display:block;margin:2px 0}
+.rr-phase .dd{color:#C2D2E2;font-size:.85rem}
+.rr-cd{text-align:center;min-width:92px;border-inline-start:1px solid rgba(255,255,255,.15);padding-inline-start:16px}
+.rr-cd .num{font-size:2rem;font-weight:800;color:var(--cyan);display:block;line-height:1}
+.rr-cd small{font-size:.72rem}
+.rr-cd.late .num{color:#FF6B5B}
+.rr-alert{background:#FFF1EE;border-inline-start:3px solid #E5483A;padding:10px 14px;font-size:.85rem;margin-top:12px;color:#7A1E15}
+.rr-score{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center;margin:22px 0}
+.rr-ring{width:120px;height:120px;position:relative}
+.rr-ring svg{transform:rotate(-90deg)}
+.rr-ring .v{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--lat);font-weight:800;font-size:1.8rem}
+.rr-ring .v small{font-size:.66rem;font-weight:600;color:#51637A;font-family:inherit}
+.rr-bars{display:grid;gap:10px}
+.rr-bars div{font-size:.82rem}
+.rr-bars span{display:flex;justify-content:space-between;font-weight:600;margin-bottom:4px}
+.rr-bars i{display:block;height:6px;background:#E3EAF1;position:relative}
+.rr-bars i::after{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:var(--w);background:var(--c,var(--cyan))}
+.rr-plan{border-top:1px solid var(--line);padding-top:16px}
+.rr-plan h4{margin:0 0 10px;font-size:1rem}
+.rr-plan ol{margin:0;padding-inline-start:20px;display:grid;gap:8px;font-size:.88rem;color:#2B3D52;line-height:1.6}
+.rr-plan ol b{color:var(--azure)}
+.rr-plan li{display:list-item;color:#2B3D52;font-size:.88rem;line-height:1.65}
+.rd-pts li{display:flex}
+.rr-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.rr-cta .btn.ghost{border-color:var(--ink);color:var(--ink)}
+.rr-cta .btn.ghost:hover{background:var(--ink);color:#fff}
+.rr-redo{background:none;border:0;color:var(--azure);font:inherit;font-size:.82rem;cursor:pointer;text-decoration:underline;margin-top:12px}
+@media (max-width:900px){.ready-grid{grid-template-columns:1fr;gap:30px}}
+@media (max-width:560px){.rd{padding:20px}.rr-score{grid-template-columns:1fr;justify-items:center}.rr-bars{width:100%}.rr-phase{grid-template-columns:1fr}.rr-cd{border:0;padding:0;text-align:start}}
+
+.integ{padding-block:96px;background:var(--ink)}
+.igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.ic{border:1px solid var(--ln);background:var(--sf);padding:22px 20px;display:flex;flex-direction:column;gap:6px;transition:border-color .2s,transform .2s}
+.ic:hover{border-color:var(--cyan);transform:translateY(-2px)}
+.ic b{font-family:var(--lat);font-size:1.05rem;color:#fff}
+.ic span{font-size:.8rem;color:var(--mut)}
+.ic a{color:#5BB8F0;text-decoration:none;font-weight:600}
+.ic-q{border-style:dashed}
+@media (max-width:900px){.igrid{grid-template-columns:1fr 1fr}}
+
+.cmp{padding-block:96px;background:var(--night)}
+.cmp-scroll{overflow-x:auto;margin-top:36px}
+.ctab{width:100%;border-collapse:collapse;min-width:640px;font-size:.9rem}
+.ctab th,.ctab td{padding:15px 16px;border-bottom:1px solid var(--ln);text-align:center}
+.ctab th:first-child,.ctab td:first-child{text-align:start;color:var(--b2)}
+.ctab thead th{font-size:.85rem;color:var(--mut);font-weight:600}
+.ctab th.us{background:var(--cyan);color:#fff}
+.ctab td:last-child{background:rgba(23,153,227,.09)}
+.ctab .ok{color:#2FD07A;font-weight:800;font-size:1.05rem}
+.ctab .no{color:#5E7186}
+.ctab .pa{color:#E7B84A;font-size:.8rem;font-weight:600}
+
+.gloss{padding-block:96px;background:var(--ink)}
+.g-search{margin-top:30px;width:100%;max-width:420px;font:inherit;font-size:.95rem;padding:12px 14px;background:var(--sf);border:1px solid var(--ln);color:#fff}
+.g-search::placeholder{color:var(--mut)}
+.g-search:focus-visible{outline:2px solid var(--cyan);outline-offset:1px}
+.glist{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin:24px 0 0}
+.glist div{padding:16px 0;border-top:1px solid var(--ln)}
+.glist dt{font-weight:700;color:#fff;margin-bottom:4px}
+.glist dt i{font-style:normal;font-family:var(--lat);color:var(--cyan);font-size:.8rem;margin-inline-start:8px;font-weight:600}
+.glist dd{margin:0;color:var(--b2);font-size:.88rem;line-height:1.7}
+.g-none{color:var(--mut);margin-top:16px}
+@media (max-width:760px){.glist{grid-template-columns:1fr}}
+
+/* ===== الستة: المراحل، التحديثات، الدليل، الملخص ===== */
+.pt-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.pt .dur{font-style:normal;font-size:.74rem;font-weight:700;color:#5BB8F0;background:rgba(23,153,227,.12);padding:3px 9px;white-space:nowrap}
+.pt>span{display:block;margin-top:4px}
+.pt .out{display:block;margin-top:6px;font-size:.76rem;color:#7F95AA}
+.upd{padding-block:96px;background:var(--night)}
+.u-filter{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.u-filter button{font:inherit;font-size:.84rem;font-weight:600;padding:8px 14px;background:none;border:1.5px solid var(--ln);color:var(--b2);cursor:pointer}
+.u-filter button[aria-pressed="true"]{background:var(--cyan);border-color:var(--cyan);color:#fff}
+.u-list{list-style:none;margin:28px 0 0;padding:0;border-inline-start:2px solid var(--ln)}
+.u-list>li.u{display:grid;grid-template-columns:150px 1fr;gap:26px;padding:0 0 30px;position:relative;color:inherit;font-size:inherit}
+.u-list>li.u::before{content:"";position:absolute;inset-inline-start:-7px;top:6px;width:12px;height:12px;background:var(--cyan);border:3px solid var(--night)}
+.u-list>li.u[hidden]{display:none}
+.u-d{padding-inline-start:24px}
+.u-d b{display:block;font-family:var(--lat);font-size:1rem;color:#fff}
+.u-d span{font-size:.76rem;color:var(--mut)}
+.u-b{background:var(--sf);border:1px solid var(--ln);padding:22px 24px}
+.u-b h3{margin:0 0 4px;font-size:1.1rem}
+.u-s{margin:0 0 12px;color:var(--mut);font-size:.86rem}
+.u-b ul{margin:0;padding-inline-start:18px;display:grid;gap:7px}
+.u-b ul li{display:list-item;font-size:.88rem;color:var(--b2);line-height:1.65}
+.tag{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 8px;margin-bottom:8px;letter-spacing:.03em}
+.tag.new{background:#2FD07A;color:#06111F}
+.tag.old{background:rgba(255,255,255,.12);color:var(--mut)}
+.u-src{display:inline-block;margin-top:12px;color:#5BB8F0;font-size:.84rem;font-weight:600;text-decoration:none}
+@media (max-width:700px){.u-list>li.u{grid-template-columns:1fr;gap:8px}.u-b{margin-inline-start:24px;padding:18px}}
+.choose{padding-block:96px;background:var(--ink)}
+.choose-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.acc-path{margin-top:26px;border:1px solid var(--ln);padding:20px 22px;background:var(--sf)}
+.acc-path>b{display:block;margin-bottom:12px}
+.acc-path ol{margin:0 0 12px;padding:0;list-style:none;counter-reset:a;display:grid;gap:8px}
+.acc-path ol li{counter-increment:a;display:flex;gap:10px;align-items:center;font-size:.88rem;color:var(--b2)}
+.acc-path ol li::before{content:counter(a);width:22px;height:22px;flex:0 0 22px;background:var(--cyan);color:#fff;font-family:var(--lat);font-weight:800;font-size:.75rem;display:flex;align-items:center;justify-content:center}
+.acc-path p{margin:0;font-size:.82rem;color:var(--mut)}
+.acc-path a{color:#5BB8F0;text-decoration:none;font-weight:600}
+.ck{background:#fff;color:var(--ink);padding:26px 28px;border-top:4px solid var(--cyan)}
+.ck-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:12px}
+.ck-h small{color:#51637A;font-size:.74rem}
+.ck-l{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:9px}
+.ck-l li{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:#2B3D52;line-height:1.55}
+.ck-l li::before{content:"✓";color:#fff;background:var(--ink);width:18px;height:18px;flex:0 0 18px;font-size:.7rem;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.ck-l.plus li::before{background:var(--cyan)}
+@media (max-width:900px){.choose-grid{grid-template-columns:1fr;gap:30px}.ck{padding:20px}}
+.brief{background:var(--cyan);color:#fff;padding-block:40px}
+.brief-row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.brief .kicker{color:#06111F;margin-bottom:6px}
+.brief h3{margin:0;font-size:1.35rem;max-width:30ch}
+.brief .dot{color:#06111F}
+.brief-btns{display:flex;gap:10px;flex-wrap:wrap}
+.brief .btn.cyan{background:#06111F;border-color:#06111F}
+.brief .btn.cyan:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.brief .btn.ghost{border-color:#fff;color:#fff}
+.brief .btn.ghost:hover{background:#fff;color:var(--ink)}
+
+@media (min-width:1101px) and (max-width:1380px){.links a{padding:8px 7px;font-size:.84rem}.nav .wrap{gap:16px}.navr{gap:8px}.navr .btn{padding:0 14px}}
+@media (min-width:1101px) and (max-width:1300px){.plink{display:none}.brand .tg .xp{display:none}}
+
+@media (min-width:1101px){#root[dir=ltr] .links a{padding:8px 7px;font-size:.84rem}#root[dir=ltr] .nav .wrap{gap:16px}#root[dir=ltr] .navr{gap:8px}}
+@media (min-width:1101px) and (max-width:1300px){#root[dir=ltr] .brand .tg{display:none}}
+
+.ftav{padding-block:96px;background:var(--ink)}
+.ftav-grid{display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center}
+.ftav-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.ftav-frame{display:flex;justify-content:center;min-height:520px}
+.ftav-frame iframe{max-width:400px!important;background:#fff}
+.ftav-ph{display:flex;align-items:center;justify-content:center;min-height:500px;width:100%;color:#51637A;text-decoration:none;font-size:.9rem;background:#fff}
+@media (max-width:900px){.ftav-grid{grid-template-columns:1fr;gap:30px}.ftav-frame{min-height:0}}
 </style>
 
 <div dir="rtl" id="root">
@@ -632,11 +811,13 @@ dialog.contract::backdrop{background:rgba(6,17,31,.82)}
     <nav class="links" id="navLinks" aria-label="Sections">
       <a href="#why"><span class="ar">لماذا الآن</span><span class="en">Why now</span></a>
       <a href="#timeline"><span class="ar">المواعيد</span><span class="en">Deadlines</span></a>
-      <a href="#how"><span class="ar">كيف تعمل</span><span class="en">How it works</span></a>
+      <a href="#ready"><span class="ar">الجاهزية</span><span class="en">Readiness</span></a>
+      <a class="m-only" href="#how"><span class="ar">كيف تعمل</span><span class="en">How it works</span></a>
       <a href="#plans"><span class="ar">الباقات</span><span class="en">Plans</span></a>
-      <a href="#calc"><span class="ar">ابنِ عرضك</span><span class="en">Build your quote</span></a>
+      <a href="#calc"><span class="ar">ابنِ عرضك</span><span class="en">Get a quote</span></a>
+      <a href="#updates"><span class="ar">التحديثات</span><span class="en">Updates</span></a>
       <a href="#faq"><span class="ar">الأسئلة</span><span class="en">FAQ</span></a>
-      <a href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+      <a class="m-only" href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a>
       <a class="m-only" href="partner.html"><span class="ar">بوابة الشركاء</span><span class="en">Partner portal</span></a>
     </nav>
     <div class="navr">
@@ -661,7 +842,7 @@ dialog.contract::backdrop{background:rgba(6,17,31,.82)}
         <div class="from"><span class="ar">يبدأ من</span><span class="en">From</span> <b>590</b> <span class="ar">درهم سنوياً · مع 100 فاتورة مجانية كل عام</span><span class="en">AED a year · with 100 free invoices every year</span></div>
         <div class="hero-cta">
           <a class="btn cyan" href="#plans"><span class="ar">اختر باقتك</span><span class="en">Choose your plan</span></a>
-          <a class="btn ghost" href="mailto:einvoicing@attconsultancy.com?subject=E-invoicing%20readiness"><span class="ar">ابدأ تقييم الجاهزية</span><span class="en">Start a readiness check</span></a>
+          <a class="btn ghost" href="#ready"><span class="ar">ابدأ تقييم الجاهزية</span><span class="en">Start a readiness check</span></a>
         </div>
         <div class="dl" aria-live="polite">
           <div class="dl-n"><span class="num" id="dlDays">0</span><small id="dlUnit"></small></div>
@@ -698,6 +879,14 @@ dialog.contract::backdrop{background:rgba(6,17,31,.82)}
     </div>
   </section>
 
+  <section class="trust" aria-label="Credentials"><div class="wrap trust-row">
+    <div class="tr-i"><b class="num">30006456</b><span><span class="ar">وكالة ضريبية مسجّلة لدى الهيئة الاتحادية للضرائب</span><span class="en">FTA-registered tax agency</span></span></div>
+    <div class="tr-i"><b>PINT AE</b><span><span class="ar">الصيغة الإماراتية للفاتورة الإلكترونية</span><span class="en">UAE e-invoice data standard</span></span></div>
+    <div class="tr-i"><b>Peppol</b><span><span class="ar">شبكة التبادل المعتمدة، نموذج الأركان الخمسة</span><span class="en">Exchange network, five-corner model</span></span></div>
+    <div class="tr-i"><b><span class="ar">مزوّدون معتمدون</span><span class="en">Accredited ASPs</span></b><span><a href="https://mof.gov.ae/en/about-us/initiatives/einvoicing/einvoicing-accredited-service-providers-asps/" target="_blank" rel="noopener"><span class="ar">من سجل وزارة المالية ↗</span><span class="en">from the MoF register ↗</span></a></span></div>
+    <div class="tr-i"><b>AR · EN</b><span><span class="ar">فريق وفواتير وتقارير بالعربية والإنجليزية</span><span class="en">Team, invoices and reports in both languages</span></span></div>
+  </div></section>
+
   <section class="why" id="why"><div class="wrap why-grid">
     <div class="sect-head rv">
       <p class="kicker"><span class="ar">لماذا الآن</span><span class="en">Why now</span></p>
@@ -730,18 +919,65 @@ dialog.contract::backdrop{background:rgba(6,17,31,.82)}
     </div>
   </div></section>
 
+
+  <section class="facts" id="facts"><div class="wrap">
+    <div class="sect-head rv">
+      <p class="kicker"><span class="ar">المنظومة باختصار</span><span class="en">The mandate at a glance</span></p>
+      <h2><span class="ar">ما الذي يتغيّر في فاتورتك فعلاً<span class="dot">.</span></span><span class="en">What actually changes in your invoicing<span class="dot">.</span></span></h2>
+    </div>
+    <div class="fgrid">
+      <div class="fc rv"><small><span class="ar">النموذج</span><span class="en">Model</span></small><b><span class="ar">Peppol بالأركان الخمسة</span><span class="en">Peppol five-corner (DCTCE)</span></b><p><span class="ar">تصدر الفاتورة من نظامك، ويتحقق منها مزوّدك المعتمد، وتنتقل إلى مزوّد عميلك، وتصل بياناتها الضريبية إلى منصة الهيئة.</span><span class="en">Your system issues it, your accredited provider validates it, it travels to your customer's provider, and the tax data reaches the FTA.</span></p></div>
+      <div class="fc rv d1"><small><span class="ar">النطاق</span><span class="en">Scope</span></small><b><span class="ar">بين الشركات ومع الحكومة</span><span class="en">B2B and B2G</span></b><p><span class="ar">تشمل الفواتير والإشعارات الدائنة بين الشركات ومع الجهات الحكومية. معاملات البيع للأفراد خارج النطاق حالياً.</span><span class="en">Covers invoices and credit notes between businesses and with government. Sales to individuals (B2C) are out of scope for now.</span></p></div>
+      <div class="fc rv d2"><small><span class="ar">الصيغة</span><span class="en">Format</span></small><b>XML · UBL · PINT AE</b><p><span class="ar">لم تعد الفاتورة ملف PDF. صارت بيانات منظّمة بحقول إلزامية، ومنها الرقم الضريبي للمشتري ورمز الفئة الضريبية لكل بند.</span><span class="en">An invoice is no longer a PDF. It is structured data with mandatory fields, including the buyer's TRN and a tax category for every line.</span></p></div>
+      <div class="fc rv"><small><span class="ar">مهلة الإرسال</span><span class="en">Transmission window</span></small><b><span class="ar">14 يوم عمل</span><span class="en">14 business days</span></b><p><span class="ar">بموجب القرار الوزاري 197 لسنة 2026، تُرسل الفاتورة والإشعار الدائن خلال 14 يوم عمل من تاريخ المعاملة.</span><span class="en">Under Ministerial Decision 197 of 2026, invoices and credit notes go out within 14 business days of the transaction.</span></p></div>
+      <div class="fc rv d1"><small><span class="ar">المجموعات الضريبية</span><span class="en">Tax groups</span></small><b><span class="ar">استثناء 24 شهراً</span><span class="en">24-month exclusion</span></b><p><span class="ar">المعاملات بين أعضاء المجموعة الضريبية الواحدة مستثناة لمدة 24 شهراً من 1 يناير 2027.</span><span class="en">Transactions inside one VAT group are excluded for 24 months from 1 January 2027.</span></p></div>
+      <div class="fc rv d2"><small><span class="ar">المرفوضات</span><span class="en">Rejections</span></small><b><span class="ar">تصحيح وإعادة إرسال</span><span class="en">Fix and resubmit</span></b><p><span class="ar">الفاتورة التي يرفضها المزوّد لا تُعدّ مُصدرة. نراجع أسباب الرفض شهرياً ونصحّح البيانات من مصدرها.</span><span class="en">An invoice your provider rejects does not count as issued. We review rejection reasons monthly and fix the data at source.</span></p></div>
+      <div class="fc rv"><small><span class="ar">الأرشفة</span><span class="en">Archiving</span></small><b><span class="ar">5 سنوات، و15 للعقارات</span><span class="en">5 years, 15 for real estate</span></b><p><span class="ar">تُحفظ الفواتير والسجلات خمس سنوات من نهاية الفترة الضريبية، و15 سنة للعقارات، وللهيئة تمديدها عند المراجعة. لم يعد الحفظ داخل الدولة شرطاً، لكن يجب أن تبقى متاحة للهيئة عند الطلب.</span><span class="en">Invoices and records are kept five years from the end of the tax period, 15 years for real estate, and the FTA can extend this during an audit. Storage inside the UAE is no longer required, but records must stay available to the FTA on request.</span></p></div>
+      <div class="fc rv d1"><small><span class="ar">مجاناً من كل مزوّد</span><span class="en">Free from every provider</span></small><b><span class="ar">100 فاتورة سنوياً</span><span class="en">100 invoices a year</span></b><p><span class="ar">يلتزم كل مزوّد معتمد بموجب القرار 168 لسنة 2026 بتبادل 100 فاتورة وإبلاغها مجاناً لكل عميل سنوياً، من تاريخ توقيع الاتفاقية.</span><span class="en">Under Decision 168 of 2026, every accredited provider must exchange and report 100 invoices free for each customer every year, from the agreement date.</span></p></div>
+      <div class="fc rv d2"><small><span class="ar">المسؤولية</span><span class="en">Accountability</span></small><b><span class="ar">مزوّدك مسؤول بالكامل</span><span class="en">Your provider stays liable</span></b><p><span class="ar">يحق للمزوّد الاستعانة بمنتج أو مشغّل خارجي، لكنه يبقى مسؤولاً أمام الوزارة عن الامتثال والخدمة. لذلك نراجع من يشغّل الخدمة فعلياً قبل التعاقد.</span><span class="en">A provider may use a third-party product or operator but stays fully liable to the Ministry for compliance and service. So we check who actually runs the service before you sign.</span></p></div>
+    </div>
+  </div></section>
+
+  <section class="ftav" id="fta-video"><div class="wrap ftav-grid">
+    <div class="sect-head rv">
+      <p class="kicker"><span class="ar">من الهيئة الاتحادية للضرائب</span><span class="en">From the Federal Tax Authority</span></p>
+      <h2><span class="ar">الفوترة الإلكترونية كما تشرحها الهيئة<span class="dot">.</span></span><span class="en">E-invoicing, as the FTA explains it<span class="dot">.</span></span></h2>
+      <p><span class="ar">مقطع قصير من الحساب الرسمي للهيئة. شاهده، ثم افحص جاهزية شركتك في دقيقتين.</span><span class="en">A short clip from the FTA's official account. Watch it, then check your company's readiness in two minutes.</span></p>
+      <div class="ftav-cta"><a class="btn cyan" href="#ready"><span class="ar">افحص جاهزيتك</span><span class="en">Check your readiness</span></a><a class="btn ghost" href="https://www.instagram.com/reel/De9iaAPu_XN/" target="_blank" rel="noopener"><span class="ar">شاهده على إنستغرام ↗</span><span class="en">Watch on Instagram ↗</span></a></div>
+    </div>
+    <div class="ftav-frame rv d1" id="ftavFrame">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/De9iaAPu_XN/" data-instgrm-version="14" style="margin:0 auto;max-width:400px;min-width:280px;width:100%;background:#fff;border:0"><a href="https://www.instagram.com/reel/De9iaAPu_XN/" target="_blank" rel="noopener" class="ftav-ph"><span class="ar">تحميل المقطع…</span><span class="en">Loading the clip…</span></a></blockquote>
+    </div>
+  </div></section>
+
+  <section class="ready" id="ready"><div class="wrap ready-grid">
+    <div class="sect-head rv">
+      <p class="kicker"><span class="ar">فحص الجاهزية · دقيقتان</span><span class="en">Readiness check · 2 minutes</span></p>
+      <h2><span class="ar">اعرف موعدك ونقاط الضعف قبل أن تعرفها الهيئة<span class="dot">.</span></span><span class="en">Know your deadline and your gaps before the FTA does<span class="dot">.</span></span></h2>
+      <p><span class="ar">ثمانية أسئلة تحدد مرحلتك وموعد تعيين المزوّد، وتعطيك درجة جاهزية في أربعة محاور وخطة عمل مرتبة، ثم تحوّلها إلى عرض سعر بضغطة.</span><span class="en">Eight questions place you in your phase and appointment deadline, score your readiness across four areas, and give you an ordered action plan you can turn into a quote in one click.</span></p>
+      <ul class="rd-pts"><li><span class="ar">بدون تسجيل ولا بريد إلكتروني</span><span class="en">No sign-up, no email required</span></li><li><span class="ar">مبنية على مواعيد وزارة المالية والقرار 197</span><span class="en">Built on MoF deadlines and Decision 197</span></li><li><span class="ar">النتيجة تبقى على جهازك حتى ترسلها</span><span class="en">Your answers stay on your device until you send them</span></li></ul>
+    </div>
+    <div class="rd rv d1" id="rd">
+      <div class="rd-top"><span id="rdStep"></span><div class="rd-bar"><i id="rdBar"></i></div></div>
+      <div id="rdQ"></div>
+      <div class="rd-nav"><button type="button" class="btn ghost" id="rdBack"><span class="ar">السابق</span><span class="en">Back</span></button><span class="rd-hint" id="rdHint"></span></div>
+      <div id="rdRes" hidden></div>
+    </div>
+  </div></section>
+
   <section class="einv" id="how"><div class="wrap">
     <div class="einv-grid">
       <div class="sect-head rv">
         <p class="kicker"><span class="ar">كيف نعمل</span><span class="en">How we work</span></p>
         <h2><span class="ar">من تقييم الجاهزية إلى الامتثال الشهري<span class="dot">.</span></span><span class="en">From readiness to monthly compliance<span class="dot">.</span></span></h2>
-        <p><span class="ar">أربع مراحل يتولاها وكيلك الضريبي، فلا تتعامل مع المزوّد والهيئة وحدك.</span><span class="en">Four stages handled by your tax agent, so you never deal with the provider and the FTA alone.</span></p>
+        <p><span class="ar">خمس مراحل يتولاها وكيلك الضريبي، لكل منها مدة ومخرَج واضح، فلا تتعامل مع المزوّد والهيئة وحدك.</span><span class="en">Five stages handled by your tax agent, each with a clear duration and deliverable, so you never deal with the provider and the FTA alone.</span></p>
       </div>
       <div>
-        <div class="pt rv"><b><span class="ar">تقييم الجاهزية</span><span class="en">Readiness assessment</span></b><span><span class="ar">تحديد الشمول ومراجعة بيانات الفواتير وتقرير فجوات لنظامك الحالي.</span><span class="en">Scope check, invoice data review and a gap report for your current system.</span></span></div>
-        <div class="pt rv d1"><b><span class="ar">تعيين المزوّد المعتمد</span><span class="en">Provider appointment</span></b><span><span class="ar">مقارنة المزوّدين المعتمدين سعراً وملاءمةً، والتعيين على EmaraTax نيابة عنك.</span><span class="en">Comparing accredited providers on price and fit, and appointing on EmaraTax for you.</span></span></div>
-        <div class="pt rv d2"><b><span class="ar">الربط التقني</span><span class="en">System integration</span></b><span><span class="ar">ربط أنظمة ERP والأنظمة المحاسبية المحلية، بما فيها الأنظمة القديمة دون واجهات برمجية.</span><span class="en">Connecting ERP and local accounting systems, including legacy software without APIs.</span></span></div>
-        <div class="pt rv d3"><b><span class="ar">الإطلاق والامتثال المستمر</span><span class="en">Go-live and ongoing compliance</span></b><span><span class="ar">الاختبار وتدريب الموظفين، ثم مراجعة المرفوضات شهرياً وربطها بإقراراتك.</span><span class="en">Testing and staff training, then a monthly review of rejections tied to your returns.</span></span></div>
+        <div class="pt rv"><div class="pt-h"><b><span class="ar">تقييم الجاهزية</span><span class="en">Readiness assessment</span></b><em class="dur"><span class="ar">1–2 أسبوع</span><span class="en">1–2 weeks</span></em></div><span><span class="ar">تحديد الشمول والمرحلة، ومراجعة عينة من فواتيرك وبيانات العملاء، وتقرير فجوات لنظامك الحالي.</span><span class="en">Scope and phase check, a review of sample invoices and customer data, and a gap report on your current system.</span></span><small class="out"><span class="ar">المخرَج: تقرير فجوات وخطة عمل</span><span class="en">Deliverable: Gap report and action plan</span></small></div>
+        <div class="pt rv d1"><div class="pt-h"><b><span class="ar">اختيار المزوّد وتعيينه</span><span class="en">Provider selection and appointment</span></b><em class="dur"><span class="ar">3–5 أيام عمل</span><span class="en">3–5 business days</span></em></div><span><span class="ar">نقارن المزوّدين المعتمدين على معايير الوزارة وملاءمة برنامجك وسعر ما بعد الـ100 فاتورة، ثم نعيّنه على EmaraTax نيابة عنك.</span><span class="en">We compare accredited providers on MoF criteria, fit with your software and price beyond the 100 free invoices, then appoint on EmaraTax for you.</span></span><small class="out"><span class="ar">المخرَج: مقارنة مكتوبة وتعيين موثّق</span><span class="en">Deliverable: Written comparison and confirmed appointment</span></small></div>
+        <div class="pt rv d2"><div class="pt-h"><b><span class="ar">الربط ومطابقة البيانات</span><span class="en">Integration and data mapping</span></b><em class="dur"><span class="ar">2–6 أسابيع</span><span class="en">2–6 weeks</span></em></div><span><span class="ar">نطابق حقول فاتورتك مع PINT AE ونربط برنامجك، بما فيه الأنظمة القديمة دون واجهات برمجية، أو نجهّز رفع ملفات Excel.</span><span class="en">We map your invoice fields to PINT AE and connect your software, including legacy systems without APIs, or set up Excel uploads.</span></span><small class="out"><span class="ar">المخرَج: ربط مُختبر على بيئة التجربة</span><span class="en">Deliverable: Integration tested in sandbox</span></small></div>
+        <div class="pt rv d3"><div class="pt-h"><b><span class="ar">الاختبار والإطلاق</span><span class="en">Testing and go-live</span></b><em class="dur"><span class="ar">1–2 أسبوع</span><span class="en">1–2 weeks</span></em></div><span><span class="ar">فواتير تجريبية حقيقية لكل حالة: عادية وإشعار دائن وفوترة ذاتية، وتدريب فريقك، ثم الإطلاق قبل موعد مرحلتك.</span><span class="en">Real test invoices for every case, standard, credit note and self-billing, staff training, then go-live before your phase date.</span></span><small class="out"><span class="ar">المخرَج: محضر قبول وإطلاق</span><span class="en">Deliverable: Sign-off and go-live</span></small></div>
+        <div class="pt rv d4"><div class="pt-h"><b><span class="ar">الامتثال الشهري</span><span class="en">Monthly compliance</span></b><em class="dur"><span class="ar">مستمر</span><span class="en">Ongoing</span></em></div><span><span class="ar">متابعة المرفوضات وتصحيح أسبابها، ومطابقة الفواتير الإلكترونية مع إقرار ضريبة القيمة المضافة، وتحديثك بكل قرار جديد.</span><span class="en">Rejection follow-up and root-cause fixes, reconciling e-invoices with your VAT return, and keeping you updated on every new decision.</span></span><small class="out"><span class="ar">المخرَج: تقرير شهري</span><span class="en">Deliverable: Monthly report</span></small></div>
       </div>
     </div>
     <div class="flow" id="flow">
@@ -771,6 +1007,99 @@ dialog.contract::backdrop{background:rgba(6,17,31,.82)}
     </div>
   </div></section>
 
+
+  <section class="upd" id="updates"><div class="wrap">
+    <div class="sect-head rv">
+      <p class="kicker"><span class="ar">التحديثات التشريعية</span><span class="en">Legislative updates</span></p>
+      <h2><span class="ar">كل قرار، وماذا يعني لشركتك<span class="dot">.</span></span><span class="en">Every decision, and what it means for you<span class="dot">.</span></span></h2>
+      <p><span class="ar">نتابع قرارات وزارة المالية ومجلس الوزراء ونلخصها بلغة عملية. آخر تحديث: 30 أكتوبر 2026.</span><span class="en">We track Ministry of Finance and Cabinet decisions and summarise them in practical terms. Last updated: 30 October 2026.</span></p>
+    </div>
+    <div class="u-filter rv" role="tablist"><button type="button" data-f="all" aria-pressed="true"><span class="ar">الكل</span><span class="en">All</span></button><button type="button" data-f="biz" aria-pressed="false"><span class="ar">على الشركات</span><span class="en">For businesses</span></button><button type="button" data-f="asp" aria-pressed="false"><span class="ar">على المزوّدين</span><span class="en">For providers</span></button><button type="button" data-f="pen" aria-pressed="false"><span class="ar">الغرامات</span><span class="en">Penalties</span></button></div>
+    <ol class="u-list" id="uList">
+      <li class="u rv" data-t="biz"><div class="u-d"><b>19.10.2026</b><span><span class="ar">ساري من 1 أكتوبر 2026</span><span class="en">In force 1 Oct 2026</span></span></div><div class="u-b"><span class="tag new"><span class="ar">جديد</span><span class="en">New</span></span><h3><span class="ar">القرار الوزاري رقم 197 لسنة 2026</span><span class="en">Ministerial Decision No. 197 of 2026</span></h3><p class="u-s"><span class="ar">يعدّل القرار 243 لسنة 2025 بشأن منظومة الفوترة الإلكترونية.</span><span class="en">Amends Decision 243 of 2025 on the e-invoicing system.</span></p><ul><li><span class="ar">المعاملات بين أعضاء المجموعة الضريبية الواحدة مستثناة من 1 يناير 2027 حتى 31 ديسمبر 2028، وتبقى بقية التزامات الضريبة سارية.</span><span class="en">Transactions inside one registered VAT group are excluded from 1 January 2027 to 31 December 2028; other VAT duties still apply.</span></li><li><span class="ar">تُصدر الفاتورة والإشعار الدائن وتُرسل خلال 14 يوم عمل من المعاملة.</span><span class="en">Invoices and credit notes are issued and transmitted within 14 business days of the transaction.</span></li><li><span class="ar">ألغي شرط حفظ البيانات داخل الدولة وواجب إبلاغ الهيئة بأعطال النظام، مع بقاء مدد حفظ السجلات.</span><span class="en">The UAE data-storage rule and the system-failure notice were removed; record-keeping periods still apply.</span></li></ul></div></li>
+      <li class="u rv" data-t="asp"><div class="u-d"><b>01.10.2026</b><span><span class="ar">ساري</span><span class="en">In force</span></span></div><div class="u-b"><span class="tag new"><span class="ar">جديد</span><span class="en">New</span></span><h3><span class="ar">القرار الوزاري رقم 168 لسنة 2026</span><span class="en">Ministerial Decision No. 168 of 2026</span></h3><p class="u-s"><span class="ar">معايير وإجراءات اعتماد مزوّدي الخدمة، ويلغي القرار 64 لسنة 2025 وتعديلاته.</span><span class="en">Eligibility and accreditation of service providers; repeals Decision 64 of 2025 and its amendments.</span></p><ul><li><span class="ar">انتهت مرحلة "الموافقة المبدئية". المزوّد إما معتمد أو غير مسموح له بتقديم الخدمة.</span><span class="en">The "pre-approved" stage is gone. A provider is either accredited or not allowed to serve.</span></li><li><span class="ar">مُنح المزوّدون الموافَق عليهم مبدئياً 30 يوماً لاستيفاء الشروط الجديدة، وإلا تُلغى موافقتهم.</span><span class="en">Pre-approved providers had 30 days to meet the new criteria or lose their approval.</span></li><li><span class="ar">الاعتماد صالح سنتين، ويلتزم المزوّد بـ100 فاتورة مجانية لكل عميل سنوياً.</span><span class="en">Accreditation lasts two years, and providers must give each customer 100 free invoices a year.</span></li></ul><a class="u-src" href="https://mof.gov.ae/wp-content/uploads/2026/10/Ministerial-Decision-No-168-of-2026-on-Eligibility-criteria-and-Accreditation-Procedure-EN-FINAL.pdf" target="_blank" rel="noopener"><span class="ar">نص القرار ↗</span><span class="en">Read the decision ↗</span></a></div></li>
+      <li class="u rv" data-t="biz"><div class="u-d"><b>11.05.2026</b><span><span class="ar">إعلان وزارة المالية</span><span class="en">MoF announcement</span></span></div><div class="u-b"><h3><span class="ar">تمديد موعد تعيين المزوّد للمرحلة الأولى</span><span class="en">Phase 1 appointment deadline extended</span></h3><p class="u-s"><span class="ar">تعديل على القرار 244 لسنة 2025.</span><span class="en">An amendment to Decision 244 of 2025.</span></p><ul><li><span class="ar">صار آخر موعد لتعيين المزوّد للشركات بإيرادات 50 مليون درهم فأكثر 30 أكتوبر 2026 بدلاً من 31 يوليو.</span><span class="en">Businesses with revenue of AED 50M+ now had until 30 October 2026 to appoint, instead of 31 July.</span></li><li><span class="ar">بقي موعد التطبيق الإلزامي كما هو: 1 يناير 2027.</span><span class="en">The go-live date did not move: 1 January 2027.</span></li><li><span class="ar">خُففت شروط المزوّدين للسماح بالمنتجات والشراكات الخارجية مع بقاء مسؤوليتهم كاملة.</span><span class="en">Provider rules were eased to allow third-party products and partnerships, with full liability kept.</span></li></ul></div></li>
+      <li class="u rv" data-t="biz"><div class="u-d"><b>2025</b><span><span class="ar">الإطار الأساسي</span><span class="en">Core framework</span></span></div><div class="u-b"><h3><span class="ar">القراران الوزاريان 243 و244 لسنة 2025</span><span class="en">Ministerial Decisions 243 and 244 of 2025</span></h3><p class="u-s"><span class="ar">نظام الفوترة الإلكترونية ومراحل تطبيقه.</span><span class="en">The e-invoicing system and its rollout phases.</span></p><ul><li><span class="ar">القرار 243 يحدد المعاملات المشمولة والمستثناة ومتطلبات الإصدار والإرسال.</span><span class="en">Decision 243 sets in-scope and excluded transactions and issuing and transmission requirements.</span></li><li><span class="ar">القرار 244 يحدد المراحل: تعيين حتى 30 أكتوبر 2026 للكبيرة، و31 مارس 2027 للبقية وللحكومة.</span><span class="en">Decision 244 sets the phases: appoint by 30 October 2026 for large businesses, and by 31 March 2027 for the rest and government.</span></li><li><span class="ar">التطبيق الإلزامي: 1 يناير 2027، ثم 1 يوليو 2027، ثم 1 أكتوبر 2027 للجهات الحكومية.</span><span class="en">Go-live: 1 January 2027, then 1 July 2027, then 1 October 2027 for government.</span></li></ul></div></li>
+      <li class="u rv" data-t="pen"><div class="u-d"><b>2025</b><span><span class="ar">مجلس الوزراء</span><span class="en">Cabinet</span></span></div><div class="u-b"><h3><span class="ar">قرار مجلس الوزراء رقم 106 لسنة 2025</span><span class="en">Cabinet Decision No. 106 of 2025</span></h3><p class="u-s"><span class="ar">الغرامات الإدارية على مخالفات الفوترة الإلكترونية.</span><span class="en">Administrative penalties for e-invoicing violations.</span></p><ul><li><span class="ar">5,000 درهم شهرياً لعدم تطبيق النظام أو عدم تعيين مزوّد في الموعد.</span><span class="en">AED 5,000 a month for not implementing the system or not appointing a provider on time.</span></li><li><span class="ar">100 درهم لكل فاتورة أو إشعار دائن لم يُصدر إلكترونياً، بحد أقصى 5,000 درهم شهرياً لكل منهما.</span><span class="en">AED 100 per invoice or credit note not issued electronically, capped at AED 5,000 a month each.</span></li><li><span class="ar">1,000 درهم يومياً لعدم إبلاغ المزوّد بتغيّر بيانات المنشأة.</span><span class="en">AED 1,000 a day for not telling your provider about changes to your details.</span></li></ul></div></li>
+      <li class="u rv" data-t="asp"><div class="u-d"><b>2025</b><span><span class="ar">ملغى</span><span class="en">Repealed</span></span></div><div class="u-b"><span class="tag old"><span class="ar">ملغى</span><span class="en">Repealed</span></span><h3><span class="ar">القرار الوزاري رقم 64 لسنة 2025</span><span class="en">Ministerial Decision No. 64 of 2025</span></h3><p class="u-s"><span class="ar">الإطار الأول لاعتماد المزوّدين، وحلّ محله القرار 168 لسنة 2026.</span><span class="en">The first provider-accreditation framework, replaced by Decision 168 of 2026.</span></p><ul><li><span class="ar">أنشأ مسار "الموافقة المبدئية" ثم الاعتماد بعد الاختبار.</span><span class="en">It created the "pre-approval" then accreditation-after-testing path.</span></li><li><span class="ar">وضع شروط شهادات Peppol وISO والتأمين التي بقيت في القرار الجديد.</span><span class="en">It set the Peppol, ISO and insurance criteria the new decision kept.</span></li></ul></div></li>
+    </ol>
+  </div></section>
+
+  <section class="choose" id="choose"><div class="wrap choose-grid">
+    <div class="sect-head rv">
+      <p class="kicker"><span class="ar">دليل اختيار المزوّد</span><span class="en">Provider selection guide</span></p>
+      <h2><span class="ar">ثمانون مزوّداً معتمداً. هكذا نختار لك واحداً<span class="dot">.</span></span><span class="en">Eighty accredited providers. Here is how we pick yours<span class="dot">.</span></span></h2>
+      <p><span class="ar">كل مزوّد في سجل الوزارة استوفى الحد الأدنى. لكن الفرق بينهم في الربط مع برنامجك، وجودة رسائل الرفض، والسعر بعد الـ100 فاتورة، وشروط الخروج من العقد. هذا ما نقيّمه نيابة عنك.</span><span class="en">Every provider on the MoF register meets the minimum. The difference is in how they connect to your software, the quality of rejection messages, the price after 100 invoices, and exit terms. That is what we assess for you.</span></p>
+      <div class="acc-path rv">
+        <b><span class="ar">مسار الاعتماد منذ 1 أكتوبر 2026</span><span class="en">The accreditation path since 1 October 2026</span></b>
+        <ol><li><span class="ar">طلب وتقييم أهلية</span><span class="en">Application and eligibility review</span></li><li><span class="ar">اختبار تقني مع الوزارة</span><span class="en">Technical testing with the Ministry</span></li><li><span class="ar">اعتماد لمدة سنتين</span><span class="en">Accreditation for two years</span></li><li><span class="ar">تقييم مستمر وتجديد قبل 70 يوم عمل</span><span class="en">Ongoing review, renewal 70 business days ahead</span></li></ol>
+        <p><span class="ar">لا يوجد بعد اليوم مزوّد "معتمد مبدئياً". تحقق دائماً من السجل الرسمي.</span><span class="en">There is no longer a "pre-approved" provider. Always check the official register.</span> <a href="https://mof.gov.ae/en/about-us/initiatives/einvoicing/einvoicing-accredited-service-providers-asps/" target="_blank" rel="noopener"><span class="ar">سجل المزوّدين ↗</span><span class="en">Provider register ↗</span></a></p>
+      </div>
+    </div>
+    <div class="ck rv d1">
+      <div class="ck-h"><b><span class="ar">ما تشترطه الوزارة</span><span class="en">What the Ministry requires</span></b><small><span class="ar">القرار 168 لسنة 2026</span><span class="en">Decision 168 of 2026</span></small></div>
+      <ul class="ck-l">
+        <li><span class="ar">مزوّد Peppol نشط اجتاز اختبارات المطابقة</span><span class="en">Active Peppol provider that passed conformance tests</span></li>
+        <li><span class="ar">منتج يعمل منذ سنتين على الأقل</span><span class="en">A product with at least two years in operation</span></li>
+        <li><span class="ar">شهادة ISO/IEC 27001 لأمن المعلومات وISO 22301 لاستمرارية الأعمال</span><span class="en">ISO/IEC 27001 security and ISO 22301 continuity certificates</span></li>
+        <li><span class="ar">تشفير البيانات أثناء النقل والتخزين، والتحقق متعدد العوامل</span><span class="en">Encryption in transit and at rest, and multi-factor authentication</span></li>
+        <li><span class="ar">تأمين مهني 2.5 مليون، وضد الجرائم 5 ملايين، وضد الاحتيال الإلكتروني 5 ملايين درهم</span><span class="en">Insurance: AED 2.5M professional, AED 5M crime, AED 5M cyber fraud</span></li>
+        <li><span class="ar">منشأة مرخصة في الدولة ومسجلة لضريبة الشركات</span><span class="en">A UAE-licensed entity registered for Corporate Tax</span></li>
+      </ul>
+      <div class="ck-h"><b><span class="ar">ما نقيّمه نحن فوق ذلك</span><span class="en">What we assess on top</span></b><small><span class="ar">ما يهم شركتك فعلاً</span><span class="en">What matters to you</span></small></div>
+      <ul class="ck-l plus">
+        <li><span class="ar">ربط جاهز أو مُختبر مع برنامجك المحاسبي</span><span class="en">A ready or proven connector for your software</span></li>
+        <li><span class="ar">رسائل رفض واضحة تحدد الحقل والسبب</span><span class="en">Clear rejection messages that name the field and reason</span></li>
+        <li><span class="ar">السعر الحقيقي بعد الـ100 فاتورة المجانية</span><span class="en">The real price after the 100 free invoices</span></li>
+        <li><span class="ar">من يشغّل الخدمة فعلياً إن كان هناك طرف ثالث</span><span class="en">Who actually runs the service if a third party is involved</span></li>
+        <li><span class="ar">دعم بالعربية ومدة استجابة مكتوبة</span><span class="en">Arabic support and a written response time</span></li>
+        <li><span class="ar">تصدير بياناتك وشروط الانتقال لمزوّد آخر</span><span class="en">Data export and terms for moving to another provider</span></li>
+      </ul>
+      <a class="btn cyan" href="#contact"><span class="ar">قيّم لي المزوّدين</span><span class="en">Assess providers for me</span></a>
+    </div>
+  </div></section>
+
+  <section class="brief" id="brief"><div class="wrap brief-row rv">
+    <div><p class="kicker"><span class="ar">ملخص للتحميل</span><span class="en">One-page brief</span></p><h3><span class="ar">صفحة واحدة لمديرك المالي: المواعيد والغرامات والخطوات<span class="dot">.</span></span><span class="en">One page for your CFO: deadlines, penalties and steps<span class="dot">.</span></span></h3></div>
+    <div class="brief-btns"><a class="btn cyan" href="brief.html?lang=ar" target="_blank" rel="noopener"><span class="ar">الملخص بالعربية (PDF)</span><span class="en">Arabic brief (PDF)</span></a><a class="btn ghost" href="brief.html?lang=en" target="_blank" rel="noopener"><span class="ar">الملخص بالإنجليزية (PDF)</span><span class="en">English brief (PDF)</span></a></div>
+  </div></section>
+
+  <section class="integ" id="integrations"><div class="wrap">
+    <div class="sect-head rv">
+      <p class="kicker"><span class="ar">الربط</span><span class="en">Integrations</span></p>
+      <h2><span class="ar">يعمل مع برنامجك الحالي، فلا تغيّر نظامك<span class="dot">.</span></span><span class="en">Works with the software you already use<span class="dot">.</span></span></h2>
+      <p><span class="ar">نربط برنامجك المحاسبي بمزوّدك المعتمد، أو نرفع فواتيرك من ملفات Excel إن لم يكن لديك برنامج.</span><span class="en">We connect your accounting software to your accredited provider, or upload your invoices from Excel if you have no software.</span></p>
+    </div>
+    <div class="igrid">
+      <div class="ic rv"><b><span class="ar">الأمين</span><span class="en">Al-Ameen</span></b><span><span class="ar">ربط مباشر</span><span class="en">Direct connector</span></span></div>
+      <div class="ic rv d1"><b><span class="ar">ميزان</span><span class="en">Mizan</span></b><span><span class="ar">ربط مباشر</span><span class="en">Direct connector</span></span></div>
+      <div class="ic rv d2"><b>Odoo</b><span><span class="ar">ربط مباشر</span><span class="en">Direct connector</span></span></div>
+      <div class="ic rv d3"><b>Zoho Books</b><span><span class="ar">ربط عبر الواجهة البرمجية</span><span class="en">API connector</span></span></div>
+      <div class="ic rv"><b>TallyPrime</b><span><span class="ar">ربط وتهيئة</span><span class="en">Connector and setup</span></span></div>
+      <div class="ic rv d1"><b>SAP · Dynamics · Oracle</b><span><span class="ar">ربط مخصص لأنظمة ERP</span><span class="en">Custom ERP integration</span></span></div>
+      <div class="ic rv d2"><b>Excel · CSV</b><span><span class="ar">رفع ملفات بلا برنامج</span><span class="en">File upload, no software</span></span></div>
+      <div class="ic rv d3 ic-q"><b><span class="ar">برنامج آخر؟</span><span class="en">Something else?</span></b><span><a href="#contact"><span class="ar">اسألنا عن الربط ←</span><span class="en">Ask about integration →</span></a></span></div>
+    </div>
+  </div></section>
+
+  <section class="cmp" id="compare"><div class="wrap">
+    <div class="sect-head rv">
+      <p class="kicker"><span class="ar">لماذا وكيل ضريبي</span><span class="en">Why a tax agent</span></p>
+      <h2><span class="ar">المزوّد ينقل فاتورتك، ونحن نضمن صحتها ضريبياً<span class="dot">.</span></span><span class="en">The provider moves your invoice. We make sure it is right for tax<span class="dot">.</span></span></h2>
+    </div>
+    <div class="cmp-scroll rv"><table class="ctab">
+      <thead><tr><th></th><th><span class="ar">تتعامل وحدك</span><span class="en">On your own</span></th><th><span class="ar">برنامج فقط</span><span class="en">Software only</span></th><th class="us"><span class="ar">ATT وكيلك الضريبي</span><span class="en">ATT, your tax agent</span></th></tr></thead>
+      <tbody>
+        <tr><td><span class="ar">اختيار المزوّد وتعيينه على EmaraTax</span><span class="en">Choosing and appointing the provider on EmaraTax</span></td><td class="no">✕</td><td class="pa"><span class="ar">جزئياً</span><span class="en">Partly</span></td><td class="ok">✓</td></tr>
+        <tr><td><span class="ar">مراجعة المعاملة الضريبية لكل بند قبل الإطلاق</span><span class="en">Checking the VAT treatment of every line before go-live</span></td><td class="no">✕</td><td class="no">✕</td><td class="ok">✓</td></tr>
+        <tr><td><span class="ar">ربط برنامجك المحاسبي</span><span class="en">Connecting your accounting software</span></td><td class="no">✕</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+        <tr><td><span class="ar">مطابقة الفواتير مع إقرار ضريبة القيمة المضافة</span><span class="en">Reconciling e-invoices with your VAT return</span></td><td class="no">✕</td><td class="no">✕</td><td class="ok">✓</td></tr>
+        <tr><td><span class="ar">متابعة المرفوضات وتصحيحها شهرياً</span><span class="en">Following up and fixing rejections every month</span></td><td class="no">✕</td><td class="pa"><span class="ar">تنبيه فقط</span><span class="en">Alerts only</span></td><td class="ok">✓</td></tr>
+        <tr><td><span class="ar">تمثيلك أمام الهيئة عند المراجعة</span><span class="en">Representing you before the FTA in an audit</span></td><td class="no">✕</td><td class="no">✕</td><td class="ok">✓</td></tr>
+        <tr><td><span class="ar">مسؤول واحد بالعربية والإنجليزية</span><span class="en">One accountable contact, Arabic and English</span></td><td class="no">✕</td><td class="pa"><span class="ar">مركز دعم</span><span class="en">Help desk</span></td><td class="ok">✓</td></tr>
+      </tbody>
+    </table></div>
+  </div></section>
 
   <main class="main" id="plans"><div class="wrap">
     <div class="sect-head plans-head rv"><p class="kicker"><span class="ar">الخطوة الأولى</span><span class="en">Step one</span></p><h2><span class="ar">اختر باقتك، ثم ابنِ عرضك الشامل<span class="dot">.</span></span><span class="en">Choose your plan, then build your full quote<span class="dot">.</span></span></h2><p><span class="ar">اضغط "اختر هذه الباقة" على الباقة التي تناسب حجمك، فننقلك إلى بناء العرض لتضيف الخدمات التي تحتاجها.</span><span class="en">Press “Choose this plan” on the plan that fits your volume, and we take you to the quote builder to add the services you need.</span></p></div>
@@ -947,7 +1276,21 @@ dialog.contract::backdrop{background:rgba(6,17,31,.82)}
       <details><summary><span class="ar">هل الـ 100 فاتورة مجانية فعلاً؟</span><span class="en">Are the 100 invoices really free?</span></summary><p><span class="ar">نعم، 100 فاتورة مجانية كل عام في كل باقة، وتتجدد تلقائياً. في الباقة المجانية تدفع رسم بوابة الويب فقط، وفي الباقات المدفوعة تأتي فوق عدد فواتير الباقة.</span><span class="en">Yes, 100 free invoices every year in every plan, renewed automatically. On the free plan you pay only the web portal fee; on paid plans they come on top of the plan allowance.</span></p></details>
       <details><summary><span class="ar">ماذا يحدث إذا تجاوزت عدد فواتير باقتي؟</span><span class="en">What if I exceed my plan’s invoices?</span></summary><p><span class="ar">تُحتسب الفاتورة الزائدة بسعر الفاتورة في باقتك نفسها، دون أي رسوم إضافية. ويمكنك الترقية في أي وقت دون رسم تفعيل جديد.</span><span class="en">Extra invoices are billed at your own plan’s per-invoice rate, with no surcharge. You can upgrade at any time with no new activation fee.</span></p></details>
       <details><summary><span class="ar">كم يستغرق تجهيز شركتي؟</span><span class="en">How long does it take to get ready?</span></summary><p><span class="ar">يعتمد على نظامك. الباقات بلا ربط هي الأسرع لأنك ترفع ملفاتك عبر البوابة، أما الربط مع برنامج محاسبي فيحتاج اختباراً قبل الإطلاق. لذلك ننصح بالبدء قبل موعد مرحلتك بوقت كافٍ.</span><span class="en">It depends on your system. Plans without integration are fastest because you upload through the portal; integrating accounting software needs testing before go-live. So we advise starting well before your phase deadline.</span></p></details>
+          <details><summary><span class="ar">هل ATT مزوّد خدمة معتمد؟</span><span class="en">Is ATT an accredited service provider?</span></summary><p><span class="ar">لا. ATT وكالة ضريبية مسجّلة لدى الهيئة (30006456). نعمل مع مزوّدين معتمدين من وزارة المالية، ونتولى عنك اختيار المزوّد وتعيينه والربط ومراجعة الصحة الضريبية والمتابعة الشهرية. يمكنك مراجعة سجل المزوّدين المعتمدين على موقع وزارة المالية.</span><span class="en">No. ATT is an FTA-registered tax agency (30006456). We work with MoF-accredited providers and handle choosing and appointing your provider, integration, tax accuracy and monthly follow-up for you. You can check the accredited provider register on the MoF website.</span></p></details>
+      <details><summary><span class="ar">ما الفرق بين شهادة Peppol واعتماد وزارة المالية؟</span><span class="en">What is the difference between Peppol certification and MoF accreditation?</span></summary><p><span class="ar">شهادة Peppol تسمح للمزوّد بتبادل الفواتير على الشبكة دولياً. أما اعتماد وزارة المالية فهو الشرط القانوني لتقديم الخدمة في الإمارات وإبلاغ الهيئة. تحتاج مزوّداً معتمداً من الوزارة.</span><span class="en">Peppol certification lets a provider exchange invoices on the network internationally. MoF accreditation is the legal requirement to serve UAE businesses and report to the FTA. You need an MoF-accredited provider.</span></p></details>
+      <details><summary><span class="ar">ماذا يحدث إذا رُفضت فاتورة؟</span><span class="en">What happens if an invoice is rejected?</span></summary><p><span class="ar">يعيد المزوّد سبب الرفض، ولا تُعدّ الفاتورة مُصدرة حتى تُصحّح وتُرسل من جديد ضمن المهلة. نتابع المرفوضات ونصحّح سببها في بياناتك حتى لا يتكرر.</span><span class="en">The provider returns the reason, and the invoice does not count as issued until it is corrected and resent within the deadline. We follow up rejections and fix the cause in your data so it does not repeat.</span></p></details>
+      <details><summary><span class="ar">هل أحتاج حفظ البيانات داخل الدولة؟</span><span class="en">Must my data be stored in the UAE?</span></summary><p><span class="ar">بعد القرار الوزاري 197 لسنة 2026 لم يعد حفظ بيانات الفوترة داخل الدولة شرطاً، لكن تبقى متطلبات حفظ السجلات الضريبية سارية بمددها.</span><span class="en">Since Ministerial Decision 197 of 2026, e-invoicing data no longer has to be stored inside the UAE, but tax record-keeping periods still apply.</span></p></details>
     </div>
+  </div></section>
+
+  <section class="gloss" id="glossary"><div class="wrap">
+    <div class="sect-head rv">
+      <p class="kicker"><span class="ar">المصطلحات</span><span class="en">Glossary</span></p>
+      <h2><span class="ar">مصطلحات الفوترة الإلكترونية بلغة واضحة<span class="dot">.</span></span><span class="en">E-invoicing terms in plain language<span class="dot">.</span></span></h2>
+    </div>
+    <input type="search" class="g-search" id="gSearch" aria-label="Search">
+    <dl class="glist" id="gList"></dl>
+    <p class="g-none" id="gNone" hidden><span class="ar">لا نتيجة. اسألنا على واتساب.</span><span class="en">No match. Ask us on WhatsApp.</span></p>
   </div></section>
 
   <section class="contact" id="contact"><div class="wrap contact-grid">
@@ -1809,6 +2152,110 @@ n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.rem
 var ls=[].slice.call(n.querySelectorAll('a[href^="#"]'));if(!('IntersectionObserver' in window))return;
 var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){ls.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id);});}});},{rootMargin:'-45% 0px -50% 0px'});
 ls.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)io.observe(t);});})();
+
+/* ===== فحص الجاهزية ===== */
+(function(){
+var box=document.getElementById('rd');if(!box)return;
+function RA(){return document.getElementById('root').dir==='rtl';}
+function T(a,e){return RA()?a:e;}
+var Q=[
+ {k:'seg',a:'ما وضع منشأتك؟',e:'Which describes your business?',sa:'الإيرادات السنوية تحدد مرحلتك وموعدك.',se:'Annual revenue decides your phase and deadline.',o:[['big','إيرادات 50 مليون درهم فأكثر','Revenue AED 50M or more'],['small','إيرادات أقل من 50 مليون درهم','Revenue below AED 50M'],['gov','جهة حكومية','Government entity']]},
+ {k:'tx',a:'لمن تصدر فواتيرك غالباً؟',e:'Who do you mostly invoice?',sa:'الفوترة الإلكترونية تشمل المعاملات مع الشركات والجهات الحكومية.',se:'E-invoicing covers business and government customers.',o:[['b2b','شركات','Businesses (B2B)'],['b2g','جهات حكومية','Government (B2G)'],['mix','شركات وأفراد','Businesses and individuals'],['b2c','أفراد فقط','Individuals only (B2C)']]},
+ {k:'sw',a:'بماذا تصدر فواتيرك اليوم؟',e:'What do you invoice with today?',sa:'يحدد هذا طريقة الربط مع المزوّد.',se:'This decides how we connect you to the provider.',o:[['none','Excel أو Word أو يدوياً','Excel, Word or by hand'],['ameen','الأمين','Al-Ameen'],['mizan','ميزان','Mizan'],['odoo','أودو','Odoo'],['zoho','زوهو أو تالي','Zoho or Tally'],['erp','SAP أو Dynamics أو Oracle أو غيرها','SAP, Dynamics, Oracle or other ERP']]},
+ {k:'asp',a:'هل عيّنت مزوّد خدمة معتمداً؟',e:'Have you appointed an accredited provider?',sa:'التعيين يتم على EmaraTax قبل موعد مرحلتك.',se:'Appointment is made on EmaraTax before your phase deadline.',o:[['yes','نعم، تم التعيين','Yes, appointed'],['talk','قيد المقارنة أو التفاوض','Comparing or negotiating'],['no','لا، لم أبدأ','No, not started']]},
+ {k:'data',a:'هل بيانات عملائك مكتملة؟',e:'Is your customer data complete?',sa:'الاسم القانوني والرقم الضريبي والعنوان لكل عميل من الشركات.',se:'Legal name, TRN and address for every business customer.',o:[['ok','نعم، مكتملة ومحدثة','Yes, complete and current'],['part','جزئياً','Partly'],['bad','لا، تحتاج مراجعة','No, it needs work']]},
+ {k:'cx',a:'هل لديك معاملات معقدة؟',e:'Do you have complex flows?',sa:'إشعارات دائنة متكررة، أو فوترة ذاتية، أو عدة فروع أو منشآت.',se:'Frequent credit notes, self-billing, or several branches or entities.',o:[['no','لا، فواتير عادية','No, standard invoices'],['yes','نعم، واحدة منها أو أكثر','Yes, one or more of these']]},
+ {k:'team',a:'من سيتابع المرفوضات والهيئة؟',e:'Who will handle rejections and the FTA?',sa:'الفاتورة المرفوضة لا تُعدّ مُصدرة حتى تُصحّح.',se:'A rejected invoice does not count as issued until it is fixed.',o:[['in','فريق ضريبي داخلي','An in-house tax team'],['acc','محاسب خارجي','An external accountant'],['none','لا أحد بعد','Nobody yet']]},
+ {k:'n',num:1,a:'كم فاتورة تصدر في السنة تقريباً؟',e:'Roughly how many invoices a year?',sa:'المبيعات والمشتريات والإشعارات. نستخدمه لاقتراح باقتك.',se:'Sales, purchases and credit notes. We use it to suggest your plan.'}
+];
+var A={},i=0;
+var D={big:['2026-10-30','2027-01-01','المرحلة الأولى','Phase 1'],small:['2027-03-31','2027-07-01','المرحلة الثانية','Phase 2'],gov:['2027-03-31','2027-10-01','المرحلة الثالثة','Phase 3']};
+function today(){var p=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Dubai'}).format(new Date());return new Date(p+'T00:00:00Z');}
+function days(d){return Math.round((new Date(d+'T00:00:00Z')-today())/864e5);}
+function fd(d){return new Date(d+'T00:00:00Z').toLocaleDateString(RA()?'ar-AE':'en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC',numberingSystem:'latn'});}
+var qEl=document.getElementById('rdQ'),res=document.getElementById('rdRes'),back=document.getElementById('rdBack'),step=document.getElementById('rdStep'),bar=document.getElementById('rdBar'),hint=document.getElementById('rdHint'),nav=box.querySelector('.rd-nav');
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function render(){
+  if(i>=Q.length){return result();}
+  res.hidden=true;qEl.hidden=false;nav.hidden=false;
+  var q=Q[i];step.textContent=T('السؤال ','Question ')+(i+1)+' / '+Q.length;bar.style.width=(i/Q.length*100)+'%';
+  back.style.visibility=i?'visible':'hidden';hint.textContent='';
+  var h='<div class="rd-q"><h3>'+esc(T(q.a,q.e))+'</h3><p class="sub">'+esc(T(q.sa,q.se))+'</p>';
+  if(q.num){h+='<div class="rd-num"><input type="number" min="1" inputmode="numeric" id="rdN" value="'+(A.n||'')+'" placeholder="1200"><button type="button" class="btn cyan" id="rdGo">'+T('اعرض النتيجة','See my result')+'</button></div><div class="rd-chips">'+[300,1200,2400,5000,12000].map(function(v){return '<button type="button" data-v="'+v+'">'+v.toLocaleString('en-US')+'</button>';}).join('')+'</div>';}
+  else{h+='<div class="rd-opts">'+q.o.map(function(o){return '<button type="button" data-v="'+o[0]+'" aria-pressed="'+(A[q.k]===o[0])+'">'+esc(T(o[1],o[2]))+'</button>';}).join('')+'</div>';}
+  qEl.innerHTML=h+'</div>';
+  if(q.num){var inp=document.getElementById('rdN');
+    function go(){var v=Math.floor(+inp.value);if(!(v>0)){hint.textContent=T('اكتب رقماً تقريبياً','Enter an approximate number');inp.focus();return;}A.n=v;i++;render();}
+    document.getElementById('rdGo').onclick=go;inp.onkeydown=function(e){if(e.key==='Enter')go();};
+    qEl.querySelectorAll('.rd-chips button').forEach(function(b){b.onclick=function(){inp.value=b.dataset.v;go();};});
+  }else qEl.querySelectorAll('.rd-opts button').forEach(function(b){b.onclick=function(){A[q.k]=b.dataset.v;i++;render();};});
+}
+back.onclick=function(){if(i>0){i--;render();}};
+function clamp(v){return Math.max(5,Math.min(100,v));}
+function result(){
+  qEl.hidden=true;nav.hidden=true;res.hidden=false;bar.style.width='100%';step.textContent=T('نتيجتك','Your result');
+  var d=D[A.seg],dA=days(d[0]),dL=days(d[1]),out=A.tx==='b2c',sw=Q[2].o.filter(function(o){return o[0]===A.sw;})[0];
+  var sys=({none:40,ameen:78,mizan:78,odoo:80,zoho:80,erp:58})[A.sw]-(A.cx==='yes'?15:0);
+  var prov=({yes:100,talk:55,no:12})[A.asp];
+  var data=({ok:88,part:50,bad:18})[A.data]+({in:8,acc:0,none:-12})[A.team];
+  var time=dL>240?90:dL>150?72:dL>90?55:dL>30?35:15; if(A.asp==='yes')time=Math.min(100,time+15);
+  var S=[[T('الأنظمة','Systems'),clamp(sys)],[T('المزوّد','Provider'),clamp(prov)],[T('البيانات والفريق','Data and team'),clamp(data)],[T('الوقت المتبقي','Time runway'),clamp(time)]];
+  var tot=Math.round(S.reduce(function(a,b){return a+b[1];},0)/4),col=tot>=70?'#2FD07A':tot>=45?'#E7B84A':'#E5483A';
+  var P=[];
+  if(A.asp!=='yes')P.push(dA<0?T('<b>عيّن مزوّداً معتمداً فوراً</b>. فات موعد مرحلتك في '+fd(d[0])+'، وكل شهر تأخير قد يكلّف 5,000 درهم.','<b>Appoint an accredited provider now</b>. Your phase deadline passed on '+fd(d[0])+', and each month of delay can cost AED 5,000.'):T('<b>عيّن مزوّداً معتمداً على EmaraTax</b> قبل '+fd(d[0])+'. نقارن لك المزوّدين ونعيّنه نيابة عنك.','<b>Appoint an accredited provider on EmaraTax</b> before '+fd(d[0])+'. We compare providers and appoint on your behalf.'));
+  if(A.data!=='ok')P.push(T('<b>نظّف بيانات العملاء</b>: الاسم القانوني والرقم الضريبي والعنوان لكل عميل من الشركات، فهي أكثر أسباب الرفض.','<b>Clean your customer data</b>: legal name, TRN and address for every business customer. It is the top cause of rejections.'));
+  P.push(A.sw==='none'?T('<b>قرّر طريقة الإصدار</b>: رفع ملفات Excel أو برنامج محاسبي. نطابق نموذج فاتورتك مع حقول PINT AE.','<b>Decide how you will issue</b>: Excel upload or accounting software. We map your invoice template to PINT AE fields.'):A.sw==='erp'?T('<b>حدّد نطاق ربط ERP</b> ومطابقة الحقول مع PINT AE قبل الاختبار.','<b>Scope the ERP integration</b> and field mapping to PINT AE before testing.'):T('<b>اربط '+sw[1]+' بالمزوّد</b> وأصدر فواتير تجريبية حقيقية.','<b>Connect '+sw[2]+' to the provider</b> and run real test invoices.'));
+  if(A.cx==='yes')P.push(T('<b>خطّط للحالات الخاصة</b>: الإشعارات الدائنة والفوترة الذاتية وتعدد المنشآت قبل الإطلاق.','<b>Plan the special cases</b>: credit notes, self-billing and multiple entities before go-live.'));
+  if(A.team==='none')P.push(T('<b>حدّد مسؤولاً عن المرفوضات</b> ومتابعة الهيئة، أو فوّضها لوكيلك الضريبي.','<b>Name an owner for rejections</b> and FTA follow-up, or delegate it to your tax agent.'));
+  P.push(T('<b>اختبر ثم انطلق</b> قبل '+fd(d[1])+'، وطابق الفواتير الإلكترونية مع إقرار ضريبة القيمة المضافة شهرياً.','<b>Test, then go live</b> before '+fd(d[1])+', and reconcile e-invoices with your VAT return each month.'));
+  var C=2*Math.PI*52,dash=C*tot/100;
+  var h='<div class="rr-phase"><div><small>'+(out?T('خارج النطاق حالياً','Currently out of scope'):T('مرحلتك','Your phase'))+'</small><b>'+(out?T('معاملات الأفراد فقط','Individuals only'):T(d[2],d[3]))+'</b><div class="dd">'+(out?T('البيع للأفراد خارج الفوترة الإلكترونية حالياً. نراجع معك أي معاملة مع شركة أو جهة حكومية.','B2C sales are outside e-invoicing for now. We will check any business or government sales with you.'):T('تعيين المزوّد حتى ','Appoint a provider by ')+fd(d[0])+' · '+T('الإلزام من ','Live from ')+fd(d[1]))+'</div></div>'+
+   (out?'':'<div class="rr-cd'+(dA<0?' late':'')+'"><span class="num">'+(dA<0?Math.abs(dA):dA)+'</span><small>'+(dA<0?T('يوماً متأخراً','days overdue'):dA===0?T('الموعد اليوم','deadline is today'):T('يوماً للتعيين','days to appoint'))+'</small></div>')+'</div>';
+  if(!out&&dA<=0&&A.asp!=='yes')h+='<div class="rr-alert">'+T('موعد تعيين المزوّد لمرحلتك '+(dA===0?'هو اليوم':'قد فات')+'. ابدأ الآن لتقليل خطر غرامة 5,000 درهم شهرياً.','Your provider appointment deadline '+(dA===0?'is today':'has passed')+'. Start now to limit the risk of the AED 5,000 monthly penalty.')+'</div>';
+  h+='<div class="rr-score"><div class="rr-ring"><svg width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#E3EAF1" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="'+col+'" stroke-width="10" stroke-dasharray="'+dash+' '+C+'"/></svg><div class="v">'+tot+'<small>'+T('الجاهزية من 100','readiness / 100')+'</small></div></div><div class="rr-bars">'+S.map(function(x){var c=x[1]>=70?'#2FD07A':x[1]>=45?'#E7B84A':'#E5483A';return '<div><span><em style="font-style:normal">'+x[0]+'</em><em style="font-style:normal">'+x[1]+'</em></span><i style="--w:'+x[1]+'%;--c:'+c+'"></i></div>';}).join('')+'</div></div>';
+  h+='<div class="rr-plan"><h4>'+T('خطتك المرتبة','Your action plan')+'</h4><ol>'+P.slice(0,6).map(function(x){return '<li>'+x+'</li>';}).join('')+'</ol></div>';
+  h+='<div class="rr-cta"><button type="button" class="btn cyan" id="rrQuote">'+T('حوّلها إلى عرض سعر','Turn this into a quote')+'</button><a class="btn ghost" id="rrWa" target="_blank" rel="noopener">'+T('أرسل النتيجة على واتساب','Send my result on WhatsApp')+'</a></div><button type="button" class="rr-redo" id="rrRedo">'+T('أعد الفحص','Start again')+'</button>';
+  res.innerHTML=h;
+  var txt=[T('نتيجة فحص الجاهزية · einvoiceuae.tax','Readiness check result · einvoiceuae.tax'),(out?T('خارج النطاق حالياً','Currently out of scope'):T(d[2],d[3])+' · '+T('التعيين حتى ','appoint by ')+fd(d[0])),T('الجاهزية: ','Readiness: ')+tot+'/100',S.map(function(x){return x[0]+' '+x[1];}).join(' · '),T('البرنامج: ','Software: ')+T(sw[1],sw[2]),T('الفواتير سنوياً: ','Invoices a year: ')+A.n,T('أرغب بخطة وعرض سعر.','I would like a plan and a quote.')].join('\n');
+  document.getElementById('rrWa').href='https://wa.me/971566540549?text='+encodeURIComponent(txt);
+  document.getElementById('rrRedo').onclick=function(){A={};i=0;render();};
+  document.getElementById('rrQuote').onclick=function(){
+    var cN=document.getElementById('cN'),cR=document.getElementById('cR'),cS=document.getElementById('cS');
+    if(cN){cN.value=A.n;if(cR)cR.value=Math.min(+cR.max||60000,A.n);cN.dispatchEvent(new Event('input',{bubbles:true}));}
+    if(cS){cS.value=({none:'none',ameen:'ameen',mizan:'mizan',odoo:'odoo',zoho:'zoho',erp:'other'})[A.sw];cS.dispatchEvent(new Event('change',{bubbles:true}));}
+    var c=document.getElementById('calc');if(c)c.scrollIntoView({behavior:'smooth'});
+  };
+}
+var prevAP=window.afterPaint;window.afterPaint=function(){if(prevAP)prevAP();render();paintG();};
+/* ===== المصطلحات ===== */
+var G=[
+ ['مزوّد الخدمة المعتمد','ASP','Accredited Service Provider','جهة اعتمدتها وزارة المالية لتتحقق من فواتيرك وترسلها عبر Peppol وتبلّغ الهيئة بها. تعيينه إلزامي.','A provider accredited by the MoF to validate your invoices, send them over Peppol and report them to the FTA. Appointing one is mandatory.'],
+ ['شبكة Peppol','Peppol','Peppol network','شبكة دولية لتبادل الفواتير الإلكترونية بين المزوّدين بمعايير موحدة، تعتمدها الإمارات أساساً لمنظومتها.','An international network for exchanging e-invoices between providers on shared standards. The UAE builds its system on it.'],
+ ['المعيار الإماراتي PINT AE','PINT AE','PINT AE','قاموس الحقول والقواعد الإماراتي للفاتورة الإلكترونية على Peppol، ويحدد الحقول الإلزامية وطريقة التحقق.','The UAE dictionary of e-invoice fields and rules on Peppol. It sets the mandatory fields and validation rules.'],
+ ['نموذج الأركان الخمسة','DCTCE','Five-corner model (DCTCE)','البائع، ومزوّده، ومزوّد المشتري، والمشتري، والهيئة كركن خامس تصلها البيانات الضريبية بشكل شبه فوري.','Seller, seller\'s provider, buyer\'s provider, buyer, and the FTA as the fifth corner receiving tax data in near real time.'],
+ ['منصة EmaraTax','EmaraTax','EmaraTax','بوابة الهيئة الاتحادية للضرائب، ومنها يتم تعيين مزوّد الخدمة المعتمد وتحديث بيانات المنشأة.','The FTA portal where you appoint your accredited provider and keep your business details up to date.'],
+ ['الرقم الضريبي','TRN','Tax Registration Number','رقم التسجيل الضريبي للمنشأة، وهو حقل إلزامي للبائع والمشتري في الفاتورة بين الشركات.','Your VAT registration number. It is a mandatory field for both seller and buyer on a B2B invoice.'],
+ ['معرّف المشارك','Peppol ID','Participant identifier','عنوان منشأتك على شبكة Peppol، ويُبنى على رقمها الضريبي لتصل إليها الفواتير.','Your business address on the Peppol network, built on its tax number so invoices can reach it.'],
+ ['صيغة UBL وXML','UBL · XML','UBL and XML','الصيغة التقنية التي تُكتب بها الفاتورة الإلكترونية بيانات منظّمة تقرأها الأنظمة بدلاً من ملف PDF.','The technical format that writes an e-invoice as structured data systems can read, instead of a PDF.'],
+ ['الإشعار الدائن الإلكتروني','Credit note','Electronic credit note','يخضع لنفس قواعد الفاتورة ومهلة الإرسال، وعدم إصداره إلكترونياً له غرامة مستقلة.','Follows the same rules and transmission window as an invoice, with its own penalty if not issued electronically.'],
+ ['الفوترة الذاتية','Self-billing','Self-billing','عندما يصدر المشتري الفاتورة نيابة عن المورد باتفاق مسبق، ولها حقول ومعالجة خاصة.','When the buyer issues the invoice on the supplier\'s behalf under a prior agreement. It has its own fields and handling.'],
+ ['الفاتورة المرفوضة','Rejection','Rejected invoice','فاتورة لم تجتز تحقق المزوّد، ولا تُعدّ مُصدرة حتى تُصحّح وتُرسل من جديد ضمن المهلة.','An invoice that failed the provider\'s validation. It does not count as issued until corrected and resent in time.'],
+ ['المجموعة الضريبية','Tax group','VAT group','منشآت مسجّلة كمجموعة ضريبية واحدة، ومعاملاتها الداخلية مستثناة 24 شهراً من 1 يناير 2027.','Entities registered as one VAT group. Their internal transactions are excluded for 24 months from 1 January 2027.'],
+ ['بين الشركات · مع الحكومة · للأفراد','B2B · B2G · B2C','B2B · B2G · B2C','تشمل المنظومة الفواتير بين الشركات ومع الجهات الحكومية، أما البيع للأفراد فخارجها حالياً.','The system covers business-to-business and business-to-government invoices. Sales to individuals are outside it for now.'],
+ ['الوكيل الضريبي','Tax agent','Registered tax agent','شخص أو وكالة مسجّلة لدى الهيئة لتمثيل المنشآت في التزاماتها الضريبية أمامها، ومنها الفوترة الإلكترونية.','A person or agency registered with the FTA to represent businesses in their tax obligations, including e-invoicing.']
+];
+var gS=document.getElementById('gSearch'),gL=document.getElementById('gList'),gN=document.getElementById('gNone');
+function paintG(){if(!gL)return;var q=(gS.value||'').trim().toLowerCase(),n=0;gS.placeholder=T('ابحث عن مصطلح…','Search a term…');
+  gL.innerHTML=G.filter(function(g){return !q||g.join(' ').toLowerCase().indexOf(q)>=0;}).map(function(g){n++;return '<div><dt>'+esc(T(g[0],g[2]))+(T(g[0],g[2]).indexOf(g[1])<0?'<i>'+esc(g[1])+'</i>':'')+'</dt><dd>'+esc(T(g[3],g[4]))+'</dd></div>';}).join('');
+  gN.hidden=n>0;}
+if(gS)gS.addEventListener('input',paintG);
+render();paintG();
+})();
+
+(function(){var f=document.querySelectorAll('.u-filter button'),L=document.querySelectorAll('#uList>li.u');f.forEach(function(b){b.addEventListener('click',function(){f.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});var t=b.dataset.f;L.forEach(function(li){li.hidden=!(t==='all'||li.dataset.t===t);});});});})();
+
+(function(){var f=document.getElementById('ftavFrame');if(!f)return;var done=false;function load(){if(done)return;done=true;var sc=document.createElement('script');sc.async=true;sc.src='https://www.instagram.com/embed.js';sc.onload=function(){if(window.instgrm)window.instgrm.Embeds.process();};document.body.appendChild(sc);}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){load();io.disconnect();}},{rootMargin:'400px'});io.observe(f);}else load();})();
 </script>
 
 </body></html>
