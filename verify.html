@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>التحقق من عرض السعر | ATT</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap">
+<style>
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:"IBM Plex Sans Arabic",Tahoma,sans-serif;background:#F4F7FA;color:#0A1C30;min-height:100vh}
+.top{background:#0A1C30;border-bottom:4px solid #1799E3;padding:18px 20px}
+.top .w{max-width:640px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lg{font-family:Archivo,sans-serif;font-weight:800;font-size:2rem;color:#fff;line-height:1;direction:ltr}.lg i{font-style:normal;color:#1799E3}
+.top small{color:#A9BCCE;font-size:.82rem}
+main{max-width:640px;margin:28px auto;padding:0 16px}
+.card{background:#fff;border:1px solid #D7E0E9;padding:24px}
+.st{display:flex;gap:14px;align-items:center;padding:16px 18px;margin-bottom:20px}
+.st .ic{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;font-size:1.5rem;font-weight:800;color:#fff}
+.st b{display:block;font-size:1.15rem}.st span{font-size:.88rem}
+.ok{background:#E9F8EF;color:#11552D}.ok .ic{background:#1E9E57}
+.bad{background:#FFF1EE;color:#7A1E15}.bad .ic{background:#E5483A}
+.old{background:#FFF8E6;color:#6B5200}.old .ic{background:#C98A00}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:.95rem}
+dt{color:#51637A}dd{margin:0;font-weight:600}
+dd.n{font-family:Archivo,sans-serif;direction:ltr;text-align:right}
+.tot{border-top:1px solid #D7E0E9;margin-top:16px;padding-top:14px;display:flex;justify-content:space-between;align-items:baseline}
+.tot b{font-family:Archivo,sans-serif;font-size:1.5rem}
+.ft{font-size:.8rem;color:#51637A;margin-top:18px;line-height:1.7}
+.ft a{color:#0B5FA5}
+.en{direction:ltr;text-align:left}
+</style></head><body>
+<div class="top"><div class="w"><span class="lg">a<i>tt</i></span><small>التحقق من عرض السعر · Quotation check</small></div></div>
+<main><div class="card" id="out"><p>جارٍ التحقق…</p></div>
+<p class="ft">تتحقق هذه الصفحة من أن عرض السعر صادر عن إيه تي تي للاستشارات ومعتمد من إدارتها، وأن أرقامه لم تُعدَّل بعد الاعتماد. تتم العملية على جهازك دون إرسال أي بيانات.<br><span class="en">This page checks that the quotation was issued and approved by ATT CONSULTANCY LLC and that its figures were not changed after approval.</span><br><a href="https://einvoiceuae.tax">einvoiceuae.tax</a> · einvoicing@attconsultancy.com</p></main>
+<script>
+(function(){
+var PUB='BEnuNN4UvzRcAMwebY2d5tSJQTVLN1aXvyH8xnMhGG/cYFOkVDBmFBThFo99nHIRrboUQCxwQ0xN9jHFhlcKcxs=';
+function u8(s){return Uint8Array.from(atob(s),function(c){return c.charCodeAt(0);});}
+function ub(s){s=s.replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';return u8(s);}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function f(v){return Number(v).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fd(s){var m=/^(\d{4})-(\d{2})-(\d{2})/.exec(s||'');if(!m)return s||'';return new Date(+m[1],+m[2]-1,+m[3]).toLocaleDateString('ar-AE-u-nu-latn',{day:'numeric',month:'long',year:'numeric'});}
+var out=document.getElementById('out');
+function bad(t,e){out.innerHTML='<div class="st bad"><div class="ic">!</div><div><b>'+t+'</b><span>'+e+'</span></div></div>';}
+(async function(){
+  var p=new URLSearchParams(location.hash.slice(1)),d=p.get('d'),s=p.get('s');
+  if(!d||!s){bad('لا يوجد عرض للتحقق منه','افتح هذه الصفحة من رمز QR أو رابط التحقق المطبوع على العرض.');return;}
+  try{
+    var key=await crypto.subtle.importKey('raw',u8(PUB),{name:'ECDSA',namedCurve:'P-256'},false,['verify']);
+    var data=ub(d),ok=await crypto.subtle.verify({name:'ECDSA',hash:'SHA-256'},key,ub(s),data);
+    if(!ok){bad('عرض غير صالح · Not valid','هذا العرض غير معتمد من ATT أو عُدّلت بياناته بعد الاعتماد. لا تعتمد عليه، وتواصل معنا.');return;}
+    var P=JSON.parse(new TextDecoder().decode(data)),today=new Date().toISOString().slice(0,10),exp=P.va&&P.va<today;
+    out.innerHTML=(exp?'<div class="st old"><div class="ic">!</div><div><b>عرض أصلي لكن انتهت صلاحيته</b><span>Genuine, but expired. اطلب عرضاً محدّثاً من مندوبك.</span></div></div>'
+      :'<div class="st ok"><div class="ic">✓</div><div><b>عرض أصلي ومعتمد · Genuine and approved</b><span>صادر عن إيه تي تي للاستشارات ذ.م.م</span></div></div>')+
+      '<dl><dt>رقم العرض</dt><dd class="n">'+esc(P.no)+'</dd><dt>العميل</dt><dd>'+esc(P.co)+'</dd>'+(P.trn?'<dt>الرقم الضريبي</dt><dd class="n">'+esc(P.trn)+'</dd>':'')+
+      '<dt>تاريخ الإصدار</dt><dd>'+esc(fd(P.is))+'</dd><dt>صالح حتى</dt><dd>'+esc(fd(P.va))+'</dd><dt>اعتمده</dt><dd>'+esc(P.by)+'</dd>'+
+      '<dt>قبل الضريبة</dt><dd class="n">AED '+f(P.sub)+'</dd><dt>الضريبة 5%</dt><dd class="n">AED '+f(P.vat)+'</dd></dl>'+
+      '<div class="tot"><span>الإجمالي المعتمد</span><b>AED '+f(P.tot)+'</b></div>';
+  }catch(e){bad('تعذّر التحقق','الرابط ناقص أو تالف. امسح رمز QR من جديد.');}
+})();
+})();
+</script></body></html>
