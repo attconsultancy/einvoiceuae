@@ -57,7 +57,7 @@ legend small{font-weight:500;color:var(--accent-ink);font-size:.74rem;margin-inl
 .ai .an{font-size:.88rem;min-width:0}
 .ai .an em{display:block;font-style:normal;font-size:.72rem;color:var(--muted)}
 .ai .ap{font-family:var(--font-num);font-weight:700;font-size:.9rem;white-space:nowrap}
-.ai .qty{width:64px;padding:5px 6px;font-size:.9rem;text-align:center;font-family:var(--font-num)}
+.ai .qty{width:74px;padding:5px 6px;font-size:.9rem;text-align:center;font-family:var(--font-num)}
 .ai.has-q{grid-template-columns:auto 1fr auto auto}
 .ai.dis{opacity:.5;cursor:default}
 .tg{display:flex;align-items:center;gap:10px;font-size:.86rem;margin-top:4px}
@@ -300,14 +300,14 @@ function renderAdds(band,s){
       var bl=blocked(it.k,s),v=addPrice(it,band),sel=g.type==='radio'?ST.sup===it.k:!!ST.on[it.k];
       var d=bl?(it.k==='t1'?'مشمولة في باقة زوهو وتالي':'مشمولة في مسك الدفاتر'):(it.k==='t3'&&ST.on.t4?'خصم 50% مع مسك الدفاتر':(it.k==='t2'&&$('monthly').checked?'فترة شهرية +50%':(it.d||'')));
       h+='<label class="ai'+(it.q?' has-q':'')+(bl?' dis':'')+'"><input type="'+(g.type==='radio'?'radio':'checkbox')+'" name="g_'+g.g+'" value="'+it.k+'"'+(sel&&!bl?' checked':'')+(bl?' disabled':'')+'><span class="an">'+it.n+(d?'<em>'+d+'</em>':'')+'</span>'+
-        (it.q?'<input class="qty" type="number" min="1" max="99" value="'+(ST.q[it.k]||1)+'" data-q="'+it.k+'" aria-label="العدد">':'')+
+        (it.q?'<input class="qty" type="number" min="1" max="999" value="'+(ST.q[it.k]||1)+'" data-q="'+it.k+'" aria-label="العدد">':'')+
         '<span class="ap">'+(v===null?'مخصص':(v===0?'—':'<span class="n">'+f(v)+'</span>'))+'</span></label>';
     });
     h+='</fieldset>';
   });
   $('adds').innerHTML=h;
   $('adds').querySelectorAll('input[type=checkbox],input[type=radio]').forEach(function(i){i.onchange=function(){if(i.type==='radio')ST.sup=i.value;else ST.on[i.value]=i.checked;render();};});
-  $('adds').querySelectorAll('.qty').forEach(function(i){i.onclick=function(e){e.preventDefault();};i.onchange=function(){ST.q[i.dataset.q]=Math.max(1,Math.min(99,Math.floor(+i.value||1)));render();};});
+  $('adds').querySelectorAll('.qty').forEach(function(i){i.onclick=function(e){e.preventDefault();};i.onchange=function(){ST.q[i.dataset.q]=Math.max(1,Math.min(999,Math.floor(+i.value||1)));render();};});
 }
 
 var LAST=null;

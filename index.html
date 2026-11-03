@@ -518,7 +518,7 @@ dialog.qview::backdrop{background:rgba(6,17,31,.8)}
 .ai .an{font-size:.86rem;color:#E6EEF5;line-height:1.5}
 .ai .an em{font-style:normal;color:var(--mut);font-size:.76rem}
 .ai .ap{font-family:var(--lat);font-weight:700;font-size:.86rem;color:#fff;white-space:nowrap}
-.ai .aq{width:56px;font:inherit;font-family:var(--lat);font-weight:700;font-size:.85rem;background:var(--ink);color:#fff;border:1px solid var(--ln);padding:4px 6px;text-align:center}
+.ai .aq{width:70px;font:inherit;font-family:var(--lat);font-weight:700;font-size:.85rem;background:var(--ink);color:#fff;border:1px solid var(--ln);padding:4px 6px;text-align:center}
 .ai.dis{opacity:.55;cursor:default}
 .ai:not(:has(.aq)){grid-template-columns:auto 1fr auto}
 .anote{font-size:.76rem;color:var(--mut);margin:4px 0 0;line-height:1.7}
@@ -1736,14 +1736,14 @@ function renderAdds(){
     g.items.forEach(function(it){
       var bl=blocked(it.k,s),v=itemPrice(it,n),pr=v===null?(A?'عرض مخصص':'Custom'):(v===0?'—':m(v));
       var sel=g.type==='radio'?ST.sup===it.k:!!ST.on[it.k];
-      h+='<label class="ai'+(bl?' dis':'')+'"><input type="'+(g.type==='radio'?'radio':'checkbox')+'" name="ad_'+g.g+'" value="'+it.k+'"'+(sel?' checked':'')+(bl?' disabled':'')+'><span class="an">'+(A?it.ar:it.en)+(bl?' <em>'+(it.k==='t1'?(A?'(مشمولة في باقتك)':'(included in your plan)'):(A?'(مشمولة في مسك الدفاتر)':'(included in bookkeeping)'))+'</em>':'')+'</span>'+(it.q?'<input class="aq" type="number" min="1" max="99" value="'+(ST.q[it.k]||1)+'" data-q="'+it.k+'" aria-label="qty">':'')+'<span class="ap num">'+pr+'</span></label>';
+      h+='<label class="ai'+(bl?' dis':'')+'"><input type="'+(g.type==='radio'?'radio':'checkbox')+'" name="ad_'+g.g+'" value="'+it.k+'"'+(sel?' checked':'')+(bl?' disabled':'')+'><span class="an">'+(A?it.ar:it.en)+(bl?' <em>'+(it.k==='t1'?(A?'(مشمولة في باقتك)':'(included in your plan)'):(A?'(مشمولة في مسك الدفاتر)':'(included in bookkeeping)'))+'</em>':'')+'</span>'+(it.q?'<input class="aq" type="number" min="1" max="999" value="'+(ST.q[it.k]||1)+'" data-q="'+it.k+'" aria-label="qty">':'')+'<span class="ap num">'+pr+'</span></label>';
     });
     h+='</fieldset>';
   });
   h+='<p class="anote">'+(A?'كل الخدمات الإضافية سنوية وتُضاف إلى السنة الأولى والتجديد. شريحة الامتثال الضريبي تُحدَّد نهائياً بعدد الفواتير وحجم المبيعات معاً.':'All add-ons are yearly and are added to year one and renewal. The tax compliance band is finalised on invoice count and sales together.')+'</p></div>';
   document.getElementById('addSel').innerHTML=h;
   document.querySelectorAll('#addSel input[type=checkbox],#addSel input[type=radio]').forEach(function(i){i.addEventListener('change',function(){if(i.type==='radio')ST.sup=i.value;else ST.on[i.value]=i.checked;renderAdds();calc();});});
-  document.querySelectorAll('#addSel .aq').forEach(function(i){i.addEventListener('input',function(){ST.q[i.dataset.q]=Math.max(1,Math.min(99,Math.floor(+i.value||1)));calc();});i.addEventListener('change',function(){renderAdds();});});
+  document.querySelectorAll('#addSel .aq').forEach(function(i){i.addEventListener('input',function(){ST.q[i.dataset.q]=Math.max(1,Math.min(999,Math.floor(+i.value||1)));calc();});i.addEventListener('change',function(){renderAdds();});});
 }
 function calc(){
   var n=Math.max(0,Math.floor(+cN.value||0)), s=cS.value, A=ar();
