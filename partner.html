@@ -225,7 +225,7 @@ ul.rules{margin:0;padding-inline-start:18px;font-size:.84rem;display:grid;gap:4p
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
 (function(){
-var VAT=0.05, PORTAL=295;
+var VAT=0.05, PORTAL=295, FREE=699;
 var PLANS=[{k:'p1',n:'بداية',a:500,p:500,r:1},{k:'p2',n:'قياسي',a:1000,p:750,r:.75},{k:'p3',n:'أعمال',a:3000,p:1500,r:.5},{k:'p4',n:'أعمال بلس',a:10000,p:2500,r:.25},{k:'p5',n:'شركات',a:25000,p:4375,r:.17},{k:'p6',n:'شركات بلس',a:50000,p:7500,r:.15}];
 var INT={ameen:{n:'الأمين',fee:990,t:[{k:'a1',a:1000,p:750,r:.75},{k:'a2',a:3000,p:1500,r:.5},{k:'a3',a:10000,p:2500,r:.25}]},
   mizan:{n:'ميزان',fee:1990,t:[{k:'z1',a:10000,p:2500,r:.25}]},odoo:{n:'أودو',fee:1990,t:[{k:'o1',a:3000,p:1500,r:.5}]}};
@@ -272,8 +272,8 @@ function basePlan(n,s){
     return {lines:lines,ren:ren,name:name,why:why,opts:opts,sel:ch.x.k};
   }
   if(n<=100&&s==='none'){
-    lines.push(['رسم بوابة الويب السنوي',PORTAL]);
-    return {lines:lines,ren:PORTAL,name:'الفواتير المجانية',why:'الفواتير ضمن الـ 100 المجانية، فيدفع رسم البوابة فقط كل سنة.',opts:[{k:'free',n:'الفواتير المجانية',sub:'100 فاتورة',c:PORTAL,best:true}],sel:'free'};
+    lines.push(['رسم بوابة الويب السنوي',FREE]);
+    return {lines:lines,ren:FREE,name:'الفواتير المجانية',why:'الفواتير ضمن الـ 100 المجانية، فيدفع رسم البوابة فقط كل سنة.',opts:[{k:'free',n:'الفواتير المجانية',sub:'100 فاتورة',c:FREE,best:true}],sel:'free'};
   }
   if(n>50100)return {lines:[],ren:0,name:'مؤسسات',why:'فوق 50,000 فاتورة: عرض مخصص من فريقنا على الحجم المُقرّ.',opts:[],custom:true};
   var all2=PLANS.map(function(x){return cost(x,n);}),best2=all2.reduce(function(a,b){return b.c<a.c?b:a;});
@@ -384,7 +384,7 @@ $('cName').oninput=links;['cPerson','cPhone','cEmail'].forEach(function(i){$(i).
 
 /* جدول المرجع */
 var rp='<table><thead><tr><th>الباقة</th><th>الفواتير</th><th>السعر</th><th>الزائدة</th><th>السنة الأولى</th></tr></thead><tbody>'+
-  '<tr><td>الفواتير المجانية</td><td class="n">100</td><td class="n">295</td><td>—</td><td class="n">295</td></tr>'+
+  '<tr><td>الفواتير المجانية</td><td class="n">100</td><td class="n">699</td><td>—</td><td class="n">699</td></tr>'+
   PLANS.map(function(p){return '<tr><td>'+p.n+'</td><td class="n">'+f(p.a)+'</td><td class="n">'+f(p.p)+'</td><td class="n">'+p.r.toFixed(2)+'</td><td class="n">'+f(p.p+PORTAL)+'</td></tr>';}).join('')+
   Object.keys(INT).map(function(k){var I=INT[k];return I.t.map(function(t){return '<tr><td>'+I.n+'</td><td class="n">'+f(t.a)+'</td><td class="n">'+f(t.p)+'</td><td class="n">'+t.r.toFixed(2)+'</td><td class="n">'+f(t.p+PORTAL+I.fee)+'</td></tr>';}).join('');}).join('')+
   ZOHO.map(function(z,i){return '<tr><td>زوهو وتالي</td><td>'+BANDS[i].replace(' فاتورة','')+'</td><td class="n">'+f(z)+'</td><td>—</td><td class="n">'+f(z+PORTAL)+'</td></tr>';}).join('')+
